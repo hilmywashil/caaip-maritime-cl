@@ -54,20 +54,19 @@
 
         .header-inner .nav-link a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-weight: 500;
-            font-size: 15px;
+            color: #000;
+            font-weight: 400;
             transition: all 0.2s;
         }
 
         .header-inner .nav-link a:hover {
-            color: var(--primary-blue);
+            color: #FFE701;
             transform: translateY(-2px);
         }
 
         .header-inner .buttons {
             display: flex;
-            gap: 15px;
+            gap: 25px;
             align-items: center;
         }
 
@@ -256,6 +255,7 @@
         }
 
         .btn-prev {
+            font-family: 'Google Sans', sans-serif;
             flex: 1;
             padding: 20px;
             background-color: #04293B;
@@ -277,6 +277,7 @@
         }
 
         .btn-next {
+            font-family: 'Google Sans', sans-serif;
             flex: 1;
             padding: 20px;
             background-color: var(--accent-yellow);
@@ -294,7 +295,6 @@
         .btn-next:hover {
             opacity: 0.9;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(255, 231, 1, 0.3);
         }
 
         /* Hide Scroll Top on this page to match image */
@@ -306,12 +306,15 @@
             .header-inner .nav-link {
                 display: none;
             }
+
             .form-grid {
                 grid-template-columns: 1fr;
             }
+
             .form-group.full-width {
                 grid-column: span 1;
             }
+
             .title-section h1 {
                 font-size: 38px;
             }
@@ -353,17 +356,17 @@
     <div class="form-container" data-aos="fade-up" data-aos-delay="300">
         <form action="{{ route('jadi-anggota.store') }}" method="POST" enctype="multipart/form-data" id="multiStepForm">
             @csrf
-            
+
             <!-- STEP 1: DATA PRIBADI -->
             <div class="form-section active" id="step1">
                 <div class="form-section-title">Data Pribadi</div>
-                
+
                 <div class="form-grid">
                     <div class="form-group">
-                        <label>Nama Usaha / Brand<span>*</span></label>
+                        <label>Nama Lengkap<span>*</span></label>
                         <input type="text" name="nama_usaha" class="form-control" placeholder="">
                     </div>
-                    
+
                     <div class="form-group">
                         <label>Jenis Kelamin<span>*</span></label>
                         <div class="radio-group">
@@ -419,7 +422,8 @@
                     <div class="form-group">
                         <label>Upload Foto KTP<span>*</span></label>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="foto_ktp" id="ktp" style="display: none;" onchange="updateFileName(this)">
+                            <input type="file" name="foto_ktp" id="ktp" style="display: none;"
+                                onchange="updateFileName(this)">
                             <div class="file-info">
                                 <label for="ktp" class="btn-upload">
                                     <i class="fas fa-cloud-upload-alt"></i> Choose File
@@ -432,7 +436,8 @@
                     <div class="form-group">
                         <label>Upload Foto Diri<span>*</span></label>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="foto_diri" id="foto" style="display: none;" onchange="updateFileName(this)">
+                            <input type="file" name="foto_diri" id="foto" style="display: none;"
+                                onchange="updateFileName(this)">
                             <div class="file-info">
                                 <label for="foto" class="btn-upload">
                                     <i class="fas fa-cloud-upload-alt"></i> Choose File
@@ -451,7 +456,7 @@
             <!-- STEP 2: PROFILE PERUSAHAAN -->
             <div class="form-section" id="step2">
                 <div class="form-section-title">Profile Perusahaan</div>
-                
+
                 <div class="form-grid">
                     <div class="form-group">
                         <label>Nama Usaha<span>*</span></label>
@@ -463,7 +468,8 @@
                         <div class="radio-group">
                             <label class="radio-item"><input type="radio" name="legalitas_tipe" value="PT"> PT</label>
                             <label class="radio-item"><input type="radio" name="legalitas_tipe" value="CV"> CV</label>
-                            <label class="radio-item"><input type="radio" name="legalitas_tipe" value="PT Perorangan"> PT Perorangan</label>
+                            <label class="radio-item"><input type="radio" name="legalitas_tipe" value="PT Perorangan"> PT
+                                Perorangan</label>
                         </div>
                     </div>
 
@@ -506,19 +512,27 @@
                     <div class="form-group">
                         <label>Lama Berdiri<span>*</span></label>
                         <div class="radio-group">
-                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="< 1 Tahun"> < 1 Tahun</label>
-                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="1 - 2 Tahun"> 1 - 2 Tahun</label>
-                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="2 - 5 Tahun"> 2 - 5 Tahun</label>
-                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="> 5 Tahun"> > 5 Tahun</label>
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="< 1 Tahun">
+                                < 1 Tahun</label>
+                                    <label class="radio-item"><input type="radio" name="lama_berdiri" value="1 - 2 Tahun"> 1
+                                        - 2 Tahun</label>
+                                    <label class="radio-item"><input type="radio" name="lama_berdiri" value="2 - 5 Tahun"> 2
+                                        - 5 Tahun</label>
+                                    <label class="radio-item"><input type="radio" name="lama_berdiri" value="> 5 Tahun"> > 5
+                                        Tahun</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Omset Perusahaan PerTahun<span>*</span></label>
                         <div class="radio-group">
-                            <label class="radio-item"><input type="radio" name="omset" value="< Rp 1.000.000.000"> < Rp 1.000.000.000</label>
-                            <label class="radio-item"><input type="radio" name="omset" value="Rp 1.000.000.000 - Rp 4.000.000.000"> Rp 1.000.000.000 - Rp 4.000.000.000</label>
-                            <label class="radio-item"><input type="radio" name="omset" value="> Rp 4.000.000.000"> > Rp 4.000.000.000</label>
+                            <label class="radio-item"><input type="radio" name="omset" value="< Rp 1.000.000.000">
+                                < Rp 1.000.000.000</label>
+                                    <label class="radio-item"><input type="radio" name="omset"
+                                            value="Rp 1.000.000.000 - Rp 4.000.000.000"> Rp 1.000.000.000 - Rp
+                                        4.000.000.000</label>
+                                    <label class="radio-item"><input type="radio" name="omset" value="> Rp 4.000.000.000"> >
+                                        Rp 4.000.000.000</label>
                         </div>
                     </div>
 
@@ -537,12 +551,15 @@
                         <div style="font-size: 12px; color: #666; margin-bottom: 10px;">
                             Mohon unggah Profile Perusahaan dalam bentuk PDF.<br>
                             Profile Perusahaan harus memuat minimal:<br>
-                            1. Logo Perusahaan, 2. Kontak Perusahaan, 3. Email Perusahaan, 4. Media Sosial, 5. Website, 6. Logo Brand, 7. Deskripsi Brand, 8. Foto Kegiatan Usaha.
+                            1. Logo Perusahaan, 2. Kontak Perusahaan, 3. Email Perusahaan, 4. Media Sosial, 5. Website, 6.
+                            Logo Brand, 7. Deskripsi Brand, 8. Foto Kegiatan Usaha.
                         </div>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="file_profile" id="file_profile" style="display: none;" onchange="updateFileName(this)">
+                            <input type="file" name="file_profile" id="file_profile" style="display: none;"
+                                onchange="updateFileName(this)">
                             <div class="file-info">
-                                <label for="file_profile" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose File</label>
+                                <label for="file_profile" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose
+                                    File</label>
                                 <span class="file-name">No file chosen</span>
                             </div>
                         </div>
@@ -551,9 +568,11 @@
                     <div class="form-group">
                         <label>Unggah Logo Perusahaan<span>*</span></label>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="file_logo" id="file_logo" style="display: none;" onchange="updateFileName(this)">
+                            <input type="file" name="file_logo" id="file_logo" style="display: none;"
+                                onchange="updateFileName(this)">
                             <div class="file-info">
-                                <label for="file_logo" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose File</label>
+                                <label for="file_logo" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose
+                                    File</label>
                                 <span class="file-name">No file chosen</span>
                             </div>
                         </div>
@@ -569,7 +588,7 @@
             <!-- STEP 3: ORGANISASI & DAFTAR -->
             <div class="form-section" id="step3">
                 <div class="form-section-title">Organisasi</div>
-                
+
                 <div class="form-grid">
                     <div class="form-group full-width">
                         <label>SFC HIPMI<span>*</span></label>
@@ -595,7 +614,8 @@
 
                 <div class="form-section-title">Daftar</div>
                 <div class="form-group full-width" style="margin-bottom: 40px;">
-                    <p style="font-size: 14px; font-weight: 600;">Dengan ini saya menyatakan bahwa data yang saya isi adalah benar dan valid<span>*</span></p>
+                    <p style="font-size: 14px; font-weight: 600;">Dengan ini saya menyatakan bahwa data yang saya isi adalah
+                        benar dan valid<span>*</span></p>
                     <label class="radio-item">
                         <input type="checkbox" name="setuju" style="width: 20px; height: 20px;"> Ya, saya setuju
                     </label>

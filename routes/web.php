@@ -64,22 +64,22 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::prefix('katalog')->name('katalog.')->group(function () {
             // List semua katalog
             Route::get('/', [AdminKatalogController::class, 'index'])->name('index');
-            
+
             // Create & Store (jika admin ingin buat manual)
             Route::get('/create', [AdminKatalogController::class, 'create'])->name('create');
             Route::post('/', [AdminKatalogController::class, 'store'])->name('store');
-            
+
             // Show detail katalog untuk review
             Route::get('/{katalog}', [AdminKatalogController::class, 'show'])->name('show');
-            
+
             // Edit & Update
             Route::get('/{katalog}/edit', [AdminKatalogController::class, 'edit'])->name('edit');
             Route::put('/{katalog}', [AdminKatalogController::class, 'update'])->name('update');
-            
+
             // Approval Actions
             Route::post('/{katalog}/approve', [AdminKatalogController::class, 'approve'])->name('approve');
             Route::post('/{katalog}/reject', [AdminKatalogController::class, 'reject'])->name('reject');
-            
+
             // Delete
             Route::delete('/{katalog}', [AdminKatalogController::class, 'destroy'])->name('destroy');
         });
@@ -100,17 +100,17 @@ Route::prefix('admin')->name('admin.')->group(function () {
             Route::get('/', [AnggotaManagementController::class, 'index'])->name('index');
             Route::get('/list', [AnggotaManagementController::class, 'index'])->name('list');
             Route::get('/{anggota}', [AnggotaManagementController::class, 'show'])->name('show');
-            
+
             // Update data anggota
             Route::put('/{anggota}/update', [AnggotaManagementController::class, 'update'])->name('update');
-            
+
             // Update password anggota
             Route::put('/{anggota}/update-password', [AnggotaManagementController::class, 'updatePassword'])->name('update-password');
-            
+
             // Approve & Reject
             Route::post('/{anggota}/approve', [AnggotaManagementController::class, 'approve'])->name('approve');
             Route::post('/{anggota}/reject', [AnggotaManagementController::class, 'reject'])->name('reject');
-            
+
             // Delete
             Route::delete('/{anggota}', [AnggotaManagementController::class, 'destroy'])->name('destroy');
         });
@@ -178,7 +178,7 @@ Route::get('/join-us', function () {
     if (Auth::guard('anggota')->check()) {
         return redirect()->route('profile-anggota')->with('info', 'Anda sudah terdaftar sebagai anggota.');
     }
-    return view('pages.asita.join-us');
+    return view('pages.join-us');
 })->name('join-us');
 
 // Submit Pendaftaran
@@ -190,7 +190,7 @@ Route::get('/registration-success', function () {
     if (!Auth::guard('anggota')->check()) {
         return redirect()->route('home')->with('error', 'Akses tidak sah.');
     }
-    
+
     return view('pages.registration-success');
 })->middleware('auth:anggota')->name('registration-success');
 
@@ -210,24 +210,24 @@ Route::post('/member-register', [AnggotaController::class, 'storeMember'])->name
 Route::middleware('auth:anggota')->group(function () {
     // ============= PROFILE DASHBOARD =============
     Route::get('/profile-anggota', [AnggotaController::class, 'profile'])->name('profile-anggota');
-    
+
     // ============= PROFILE UPDATE ACTIONS =============
     Route::post('/profile-anggota/change-password', [AnggotaController::class, 'changePassword'])
         ->name('profile-anggota.change-password');
-    
+
     Route::post('/profile-anggota/update-profile', [AnggotaController::class, 'updateProfile'])
         ->name('profile-anggota.update-profile');
-    
+
     // ============= KATALOG MANAGEMENT (MULTIPLE KATALOG) =============
     // ============= KATALOG MANAGEMENT (MULTIPLE KATALOG) =============
-Route::prefix('profile-anggota/katalog')->name('anggota.katalog.')->group(function () {
-    Route::get('/', [AnggotaKatalogController::class, 'index'])->name('index');
-    Route::get('create', [AnggotaKatalogController::class, 'create'])->name('create');
-    Route::post('create', [AnggotaKatalogController::class, 'store'])->name('store');
-    Route::get('{katalog}/edit', [AnggotaKatalogController::class, 'edit'])->name('edit');
-    Route::put('{katalog}', [AnggotaKatalogController::class, 'update'])->name('update');
-    Route::delete('{katalog}', [AnggotaKatalogController::class, 'destroy'])->name('destroy');
-    Route::delete('{katalog}/delete-image', [AnggotaKatalogController::class, 'deleteImage'])->name('delete-image');
-    Route::post('{katalog}/toggle-status', [AnggotaKatalogController::class, 'toggleStatus'])->name('toggle-status');
-});
+    Route::prefix('profile-anggota/katalog')->name('anggota.katalog.')->group(function () {
+        Route::get('/', [AnggotaKatalogController::class, 'index'])->name('index');
+        Route::get('create', [AnggotaKatalogController::class, 'create'])->name('create');
+        Route::post('create', [AnggotaKatalogController::class, 'store'])->name('store');
+        Route::get('{katalog}/edit', [AnggotaKatalogController::class, 'edit'])->name('edit');
+        Route::put('{katalog}', [AnggotaKatalogController::class, 'update'])->name('update');
+        Route::delete('{katalog}', [AnggotaKatalogController::class, 'destroy'])->name('destroy');
+        Route::delete('{katalog}/delete-image', [AnggotaKatalogController::class, 'deleteImage'])->name('delete-image');
+        Route::post('{katalog}/toggle-status', [AnggotaKatalogController::class, 'toggleStatus'])->name('toggle-status');
+    });
 });

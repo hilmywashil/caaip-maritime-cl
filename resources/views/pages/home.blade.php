@@ -24,8 +24,8 @@
                     </div>
                 </div>
             </div>
-            <div class="page-title">
-                <h1 data-aos="fade-up">MENGHUBUNGKAN ALUMNI</h1>
+            <div class="page-title" data-aos="fade-up">
+                <h1>MENGHUBUNGKAN ALUMNI</h1>
                 <h2>Membangun Maritim Indonesia</h2>
                 <p>Wadah resmi alumni STIP Jakarta untuk kolaborasi, karier, dan kontribusi nasional.</p>
                 <div class="buttons">
@@ -36,7 +36,7 @@
         </div>
     </section>
     <section class="wrapper-white-1">
-        <div class="about-section">
+        <div class="about-section" data-aos="fade-up">
             <div class="left">
                 <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="">
             </div>
@@ -62,7 +62,7 @@
         </div>
     </section>
     <section class="wrapper-blue-1">
-        <div class="pilar-section">
+        <div class="pilar-section" data-aos="fade-up">
             <div>
                 <h2>3 PILAR UTAMA CAAIP</h2>
                 <p>Sebagai fondasi utama dalam menjalankan peran dan kontribusinya, CAAIP berpegang pada tiga pilar
@@ -102,7 +102,7 @@
     </section>
     <div class="red-bottom-divider"></div>
     <section class="wrapper-white-1">
-        <div class="program-section">
+        <div class="program-section" data-aos="fade-up">
             <div>
                 <h2>Program dan Layanan</h2>
                 <p>Sebagai organisasi alumni yang berorientasi pada dampak nyata, CAAIP menghadirkan berbagai program dan
@@ -148,7 +148,7 @@
         </div>
     </section>
     <section class="wrapper-gold-1">
-        <div class="anggota-section">
+        <div class="anggota-section" data-aos="fade-up">
             <div>
                 <h2>Informasi Anggota</h2>
                 <p>CAAIP merupakan rumah bagi para alumni STIP Jakarta yang tersebar di berbagai sektor industri maritim,
@@ -189,13 +189,195 @@
         </div>
     </section>
     <section class="wrapper-white-1">
-        <div class="kegiatan-section">
+        <div class="kegiatan-section" data-aos="fade-up">
             <div>
                 <h2>Informasi Kegiatan Kami</h2>
                 <p>CAAIP secara aktif menyelenggarakan berbagai kegiatan yang bertujuan untuk mempererat hubungan antar
                     alumni, meningkatkan kompetensi, serta memberikan kontribusi nyata bagi masyarakat dan industri maritim.
                 </p>
             </div>
+
+            <div class="kegiatan-carousel-outer">
+                <button class="carousel-arrow carousel-arrow-left" id="kegiatanPrev" aria-label="Sebelumnya"><i
+                        class="fa fa-chevron-left"></i></button>
+
+                <div class="kegiatan-carousel-track-wrap">
+                    <div class="kegiatan-carousel-track" id="kegiatanTrack">
+
+                        <div class="card">
+                            <div class="card-image-wrap">
+                                <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="Judul Berita 1">
+                                <div class="card-overlay"></div>
+                                <span class="card-badge">Berita</span>
+                                <div class="card-content">
+                                    <p class="card-date">Oktober 28, 2025</p>
+                                    <h2 class="card-title">Judul Berita</h2>
+                                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                        dictum, nulla vitae varius ultricies...</p>
+                                    <a class="card-link" href="#">Lihat Lebih Banyak</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-image-wrap">
+                                <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="Judul Berita 2">
+                                <div class="card-overlay"></div>
+                                <span class="card-badge">Berita</span>
+                                <div class="card-content">
+                                    <p class="card-date">Oktober 28, 2025</p>
+                                    <h2 class="card-title">Judul Berita</h2>
+                                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                        dictum, nulla vitae varius ultricies...</p>
+                                    <a class="card-link" href="#">Lihat Lebih Banyak</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-image-wrap">
+                                <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="Judul Berita 3">
+                                <div class="card-overlay"></div>
+                                <span class="card-badge">Berita</span>
+                                <div class="card-content">
+                                    <p class="card-date">Oktober 28, 2025</p>
+                                    <h2 class="card-title">Judul Berita</h2>
+                                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                        dictum, nulla vitae varius ultricies...</p>
+                                    <a class="card-link" href="#">Lihat Lebih Banyak</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <div class="card-image-wrap">
+                                <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="Judul Berita 4">
+                                <div class="card-overlay"></div>
+                                <span class="card-badge">Berita</span>
+                                <div class="card-content">
+                                    <p class="card-date">Oktober 28, 2025</p>
+                                    <h2 class="card-title">Judul Berita</h2>
+                                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                        dictum, nulla vitae varius ultricies...</p>
+                                    <a class="card-link" href="#">Lihat Lebih Banyak</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-wrap">
+                                <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="Judul Berita 4">
+                                <div class="card-overlay"></div>
+                                <span class="card-badge">Berita</span>
+                                <div class="card-content">
+                                    <p class="card-date">Oktober 28, 2025</p>
+                                    <h2 class="card-title">Judul Berita</h2>
+                                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                        dictum, nulla vitae varius ultricies...</p>
+                                    <a class="card-link" href="#">Lihat Lebih Banyak</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-wrap">
+                                <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="Judul Berita 4">
+                                <div class="card-overlay"></div>
+                                <span class="card-badge">Berita</span>
+                                <div class="card-content">
+                                    <p class="card-date">Oktober 28, 2025</p>
+                                    <h2 class="card-title">Judul Berita</h2>
+                                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                        dictum, nulla vitae varius ultricies...</p>
+                                    <a class="card-link" href="#">Lihat Lebih Banyak</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-image-wrap">
+                                <img src="{{ asset('assets-front/images/about_image.jpg') }}" alt="Judul Berita 4">
+                                <div class="card-overlay"></div>
+                                <span class="card-badge">Berita</span>
+                                <div class="card-content">
+                                    <p class="card-date">Oktober 28, 2025</p>
+                                    <h2 class="card-title">Judul Berita</h2>
+                                    <p class="card-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas
+                                        dictum, nulla vitae varius ultricies...</p>
+                                    <a class="card-link" href="#">Lihat Lebih Banyak</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <button class="carousel-arrow carousel-arrow-right" id="kegiatanNext" aria-label="Berikutnya"><i
+                        class="fa fa-chevron-right"></i></button>
+            </div>
+
+            <div class="kegiatan-carousel-dots" id="kegiatanDots"></div>
+
+            <a href="{{ route('buku-anggota') }}" class="btn-yellow-text-black">Lihat Selengkapnya</a>
         </div>
     </section>
 @endsection
+
+@push('scripts')
+    <script>
+        (function () {
+            const track = document.getElementById('kegiatanTrack');
+            const dotsEl = document.getElementById('kegiatanDots');
+            const btnPrev = document.getElementById('kegiatanPrev');
+            const btnNext = document.getElementById('kegiatanNext');
+
+            const VISIBLE = 4;   // berapa card yang tampil sekaligus
+            const GAP = 25;  // harus sama dengan gap di CSS
+
+            const cards = track.querySelectorAll('.card');
+            const total = cards.length;
+            const maxStep = Math.max(0, total - VISIBLE); // maksimum offset index
+
+            let current = 0;
+
+            /* ── Hitung lebar 1 step ── */
+            function stepWidth() {
+                const trackW = track.parentElement.offsetWidth;
+                return (trackW + GAP) / VISIBLE;
+            }
+
+            /* ── Geser track ── */
+            function goTo(idx) {
+                current = ((idx % (maxStep + 1)) + (maxStep + 1)) % (maxStep + 1); // loop
+                track.style.transform = 'translateX(-' + (current * stepWidth()) + 'px)';
+                dotsEl.querySelectorAll('.dot').forEach(function (d, i) {
+                    d.classList.toggle('active', i === current);
+                });
+            }
+
+            /* ── Buat dots ── */
+            for (var i = 0; i <= maxStep; i++) {
+                var dot = document.createElement('button');
+                dot.className = 'dot' + (i === 0 ? ' active' : '');
+                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                dot.dataset.idx = i;
+                dot.addEventListener('click', function () { goTo(+this.dataset.idx); });
+                dotsEl.appendChild(dot);
+            }
+
+            /* ── Arrow buttons ── */
+            btnPrev.addEventListener('click', function () { goTo(current - 1); });
+            btnNext.addEventListener('click', function () { goTo(current + 1); });
+
+            /* ── Recalculate on resize ── */
+            window.addEventListener('resize', function () { goTo(current); });
+
+            /* ── Swipe support (mobile) ── */
+            var touchStartX = 0;
+            track.addEventListener('touchstart', function (e) {
+                touchStartX = e.touches[0].clientX;
+            }, { passive: true });
+            track.addEventListener('touchend', function (e) {
+                var dx = e.changedTouches[0].clientX - touchStartX;
+                if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
+            });
+        })();
+    </script>
+@endpush

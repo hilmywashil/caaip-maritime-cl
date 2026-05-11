@@ -158,7 +158,7 @@ body {
 }
 
 .header-inner .nav-link a:hover {
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 .header-inner .buttons {
@@ -203,7 +203,7 @@ body {
 
 .header-sticky .header-inner .nav-link a:hover {
     color: #FFE701;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
 }
 
 /* =============================================
@@ -259,7 +259,7 @@ body {
    ============================================= */
 
 .page-title {
-    margin-top: 100px;
+    margin-top: 150px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -617,9 +617,161 @@ body {
     text-align: center;
 }
 
-.kegiatan-section p {
+.kegiatan-section>div>p {
     text-align: center;
     color: #000;
     max-width: 700px;
     font-size: 14px;
+}
+
+/* ── Carousel Wrapper ── */
+.kegiatan-carousel-outer {
+    position: relative;
+    width: 100%;
+}
+
+.kegiatan-carousel-track-wrap {
+    overflow: hidden;
+    width: 100%;
+}
+
+.kegiatan-carousel-track {
+    display: flex;
+    gap: 25px;
+    transition: transform 0.45s cubic-bezier(.4, 0, .2, 1);
+    will-change: transform;
+}
+
+/* ── Card ── */
+.kegiatan-section .card {
+    flex: 0 0 calc(25% - 19px);
+    min-width: 0;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #0a0a0a;
+    position: relative;
+}
+
+.kegiatan-section .card .card-image-wrap {
+    position: relative;
+    height: 400px;
+}
+
+.kegiatan-section .card .card-image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.kegiatan-section .card .card-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, 0.95) 100%);
+}
+
+.kegiatan-section .card .card-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #FFD600;
+    color: #1a1000;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+}
+
+.kegiatan-section .card .card-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px 18px 18px;
+}
+
+.kegiatan-section .card .card-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.35;
+    margin: 0 0 6px;
+    text-align: left;
+}
+
+.kegiatan-section .card .card-date {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 4px;
+}
+
+.kegiatan-section .card .card-desc {
+    font-size: 12px;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 10px;
+}
+
+.kegiatan-section .card .card-link {
+    text-decoration: none;
+    color: #FFD600;
+    font-weight: 400;
+    font-size: 13px;
+    padding-top: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 6px;
+}
+
+/* ── Arrow Buttons ── */
+.kegiatan-carousel-outer .carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    background: #fff;
+    border: 2px solid #fff;
+    color: #000;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    user-select: none;
+}
+
+.kegiatan-carousel-outer .carousel-arrow-left {
+    left: -22px;
+}
+
+.kegiatan-carousel-outer .carousel-arrow-right {
+    right: -22px;
+}
+
+.kegiatan-carousel-dots {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 24px;
+}
+
+.kegiatan-carousel-dots .dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #ccc;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.25s;
+}
+
+.kegiatan-carousel-dots .dot.active {
+    background: #090B62;
+    transform: scale(1.3);
 }

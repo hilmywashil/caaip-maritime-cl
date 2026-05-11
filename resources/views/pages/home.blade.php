@@ -318,6 +318,80 @@
             <a href="{{ route('buku-anggota') }}" class="btn-yellow-text-black">Lihat Selengkapnya</a>
         </div>
     </section>
+    <section class="wrapper-white-1">
+        <div class="katalog-section">
+            <div>
+                <h2>E-Catalog</h2>
+                <p>Sebagai bentuk dukungan terhadap kemandirian ekonomi dan kewirausahaan alumni, CAAIP menghadirkan
+                    E-Catalog yang berisi berbagai bisnis yang dimiliki dan dikelola oleh para anggota.
+                </p>
+            </div>
+            <div class="grid">
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Bisnis</h3>
+                        <p>Bidang</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wrapper-image-2">
+        <div class="bergabung-section">
+            <h1>“Jadilah bagian dari jaringan alumni maritim terbesar di Indonesia.”</h1>
+            <a href="{{ route('buku-anggota') }}" class="btn-yellow">Hubungi Kami</a>
+        </div>
+    </section>
 @endsection
 
 @push('scripts')

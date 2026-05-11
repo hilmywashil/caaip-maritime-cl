@@ -42,6 +42,8 @@
     </div>
 
     @include('layouts.components.script')
+
+    @stack('scripts')
 </body>
 
 </html>

@@ -188,4 +188,14 @@
             <a href="#" class="btn-yellow">Lihat Selengkapnya</a>
         </div>
     </section>
+    <section class="wrapper-white-1">
+        <div class="kegiatan-section">
+            <div>
+                <h2>Informasi Kegiatan Kami</h2>
+                <p>CAAIP secara aktif menyelenggarakan berbagai kegiatan yang bertujuan untuk mempererat hubungan antar
+                    alumni, meningkatkan kompetensi, serta memberikan kontribusi nyata bagi masyarakat dan industri maritim.
+                </p>
+            </div>
+        </div>
+    </section>
 @endsection

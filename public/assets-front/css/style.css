@@ -597,3 +597,29 @@ body {
     max-width: 700px;
     font-size: 14px;
 }
+
+.kegiatan-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    gap: 50px;
+}
+
+.kegiatan-section h2 {
+    margin: 0;
+    font-size: 25px;
+    color: #090B62;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-align: center;
+}
+
+.kegiatan-section p {
+    text-align: center;
+    color: #000;
+    max-width: 700px;
+    font-size: 14px;
+}

@@ -101,4 +101,91 @@
         </div>
     </section>
     <div class="red-bottom-divider"></div>
+    <section class="wrapper-white-1">
+        <div class="program-section">
+            <div>
+                <h2>Program dan Layanan</h2>
+                <p>Sebagai organisasi alumni yang berorientasi pada dampak nyata, CAAIP menghadirkan berbagai program dan
+                    layanan yang dirancang untuk mendukung kesejahteraan anggota, pengembangan karier, serta mempererat
+                    hubungan antar alumni.
+                </p>
+            </div>
+            <div class="item-grid">
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/icons/network-red.png') }}" alt="Program">
+                    <div>
+                        <h3>Sosial</h3>
+                        <p>CAAIP berkomitmen untuk menghadirkan kepedulian yang nyata melalui berbagai program sosial. Mulai
+                            dari pemberian beasiswa pendidikan bagi anak yatim/piatu alumni, hingga santunan duka bagi
+                            keluarga yang ditinggalkan.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/icons/promotion-red.png') }}" alt="Program">
+                    <div>
+                        <h3>Karier</h3>
+                        <p>Dalam mendukung perkembangan profesional, CAAIP menyediakan akses informasi lowongan kerja di
+                            sektor maritim, baik di dalam maupun luar negeri.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/icons/economy-red.png') }}" alt="Program">
+                    <div>
+                        <h3>Ekonomi</h3>
+                        <p>CAAIP turut mendorong kemandirian finansial para alumni, khususnya bagi mereka yang telah
+                            memasuki masa purnatugas.</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/icons/community-red.png') }}" alt="Program">
+                    <div>
+                        <h3>Hobi dan Komunitas</h3>
+                        <p>Selain aspek profesional dan kesejahteraan, CAAIP juga memahami pentingnya kebersamaan dan
+                            keseimbangan hidup.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="wrapper-gold-1">
+        <div class="anggota-section">
+            <div>
+                <h2>Informasi Anggota</h2>
+                <p>CAAIP merupakan rumah bagi para alumni STIP Jakarta yang tersebar di berbagai sektor industri maritim,
+                    baik di dalam maupun luar negeri.
+                </p>
+            </div>
+            <div class="grid">
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Anggota</h3>
+                        <p>Jabatan</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Anggota</h3>
+                        <p>Jabatan</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Anggota</h3>
+                        <p>Jabatan</p>
+                    </div>
+                </div>
+                <div class="item">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                    <div>
+                        <h3>Nama Anggota</h3>
+                        <p>Jabatan</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="btn-yellow">Lihat Selengkapnya</a>
+        </div>
+    </section>
 @endsection

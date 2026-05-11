@@ -14,13 +14,13 @@
                     </div>
                     <div class="nav-link">
                         <a href="{{ route('home') }}">Beranda</a>
-                        <a href="#">Organisasi</a>
-                        <a href="#">E-Catalog</a>
-                        <a href="#">Berita</a>
+                        <a href="{{ route('organisasi') }}">Organisasi</a>
+                        <a href="{{ route('e-katalog') }}">E-Catalog</a>
+                        <a href="{{ route('berita') }}">Berita</a>
                     </div>
                     <div class="buttons">
-                        <a href="#" class="btn-white">Jadi Anggota</a>
-                        <a href="#" class="btn-yellow">Login</a>
+                        <a href="{{ route('join-us') }}" class="btn-white">Jadi Anggota</a>
+                        <a href="{{ route('anggota.login') }}" class="btn-yellow">Login</a>
                     </div>
                 </div>
             </div>
@@ -29,8 +29,8 @@
                 <h2>Membangun Maritim Indonesia</h2>
                 <p>Wadah resmi alumni STIP Jakarta untuk kolaborasi, karier, dan kontribusi nasional.</p>
                 <div class="buttons">
-                    <a href="#" class="btn-white">Tentang Kami</a>
-                    <a href="#" class="btn-yellow">Kontak Kami</a>
+                    <a href="{{ route('about') }}" class="btn-white">Tentang Kami</a>
+                    <a href="{{ route('contact') }}" class="btn-yellow">Kontak Kami</a>
                 </div>
             </div>
         </div>
@@ -57,7 +57,7 @@
                         kesejahteraan anggota, serta kontribusi nyata bagi pembangunan bangsa.
                     </p>
                 </div>
-                <a href="#" class="btn-yellow-text-black">Tentang Kami</a>
+                <a href="{{ route('about') }}" class="btn-yellow-text-black">Tentang Kami</a>
             </div>
         </div>
     </section>
@@ -185,7 +185,7 @@
                     </div>
                 </div>
             </div>
-            <a href="#" class="btn-yellow">Lihat Selengkapnya</a>
+            <a href="{{ route('buku-anggota') }}" class="btn-yellow">Lihat Selengkapnya</a>
         </div>
     </section>
     <section class="wrapper-white-1">

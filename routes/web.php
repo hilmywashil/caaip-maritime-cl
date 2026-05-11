@@ -178,7 +178,7 @@ Route::get('/join-us', function () {
     if (Auth::guard('anggota')->check()) {
         return redirect()->route('profile-anggota')->with('info', 'Anda sudah terdaftar sebagai anggota.');
     }
-    return view('pages.join-us');
+    return view('pages.asita.join-us');
 })->name('join-us');
 
 // Submit Pendaftaran

@@ -1,459 +1,631 @@
 @extends('layouts.app')
 
-@section('title', 'Join Us - ASITA JABAR')
+@section('title', 'Jadi Anggota - Corps Alumni Akademi Ilmu Pelayaran')
 
 @push('styles')
     <style>
-        /* IMPORT FONT MONTSERRAT */
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
-
-        /* FORM WRAPPER */
-        .join-us-form {
-            padding: 60px 0;
-            background: #f7f8fa;
-            font-family: 'Montserrat', Arial, sans-serif;
+        :root {
+            --primary-blue: #090B62;
+            --secondary-blue: #2A348D;
+            --accent-yellow: #FFE701;
+            --text-dark: #04293B;
+            --text-grey: #6b7280;
+            --bg-light: #F8F9FA;
         }
 
-        .join-us-form .container {
-            max-width: 1400px;
-            margin: auto;
-            padding: 0 20px;
-        }
-
-        .join-us-form form {
-            background: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            font-family: 'Montserrat', Arial, sans-serif;
-        }
-
-        /* ERROR ALERT */
-        .alert-danger {
-            background: #fee;
-            border: 1px solid #fcc;
-            color: #c33;
-            padding: 15px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
-
-        .alert-danger ul {
-            margin: 10px 0 0 20px;
+        body {
+            font-family: 'Google Sans', sans-serif !important;
+            background-color: #fff;
+            margin: 0;
             padding: 0;
         }
 
-        .alert-danger li {
-            margin: 5px 0;
-        }
-
-        /* SECTION */
-        .form-section {
-            margin-bottom: 40px;
-        }
-
-        .form-section h2 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #2A348D;
-            color: #04293B;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        /* FORM GROUP */
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #04293B;
-        }
-
-        .form-group label .required {
-            color: #dc2626;
-            margin-left: 3px;
-        }
-
-        .form-group input[type="text"],
-        .form-group input[type="email"],
-        .form-group input[type="date"],
-        .form-group input[type="file"],
-        .form-group textarea {
+        /* Custom Header for Join Us Page */
+        .custom-page-header {
             width: 100%;
-            padding: 12px 14px;
-            border-radius: 6px;
-            border: 2px solid #d1d5db;
-            font-size: 14px;
-            font-family: 'Montserrat', Arial, sans-serif;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .form-group textarea {
-            min-height: 100px;
-            resize: vertical;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2A348D;
-            box-shadow: 0 0 0 3px rgba(42, 52, 141, 0.15);
-        }
-
-        .form-group.error input,
-        .form-group.error textarea {
-            border-color: #dc2626;
-        }
-
-        .form-group .help-text {
-            font-size: 12px;
-            color: #6b7280;
-            margin-top: 5px;
-        }
-
-        .form-group .error-text {
-            font-size: 12px;
-            color: #dc2626;
-            margin-top: 5px;
-            font-weight: 600;
-        }
-
-        /* CHECKBOX */
-        .checkbox-group {
-            margin-bottom: 20px;
-        }
-
-        .checkbox-group label.main-label {
-            display: block;
-            margin-bottom: 12px;
-            font-weight: 600;
-            color: #04293B;
-        }
-
-        .checkbox {
             display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: #374151;
-            font-family: 'Montserrat', Arial, sans-serif;
+            justify-content: center;
+            padding: 20px;
+            background: #fff;
+            border-bottom: 1px solid #eee;
         }
 
-        .checkbox input {
-            width: 18px;
-            height: 18px;
-            cursor: pointer;
-        }
-
-        /* BUTTON */
-        .btn-primary {
+        .header-inner {
             width: 100%;
-            padding: 16px;
-            font-size: 16px;
-            font-weight: 700;
-            background: #2A348D;
-            border: none;
-            color: #ffffff;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: background 0.2s, transform 0.1s;
-            font-family: 'Montserrat', Arial, sans-serif;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            max-width: 1300px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
         }
 
-        .btn-primary:hover {
-            background: #04293B;
+        .header-inner .logo img {
+            width: 80px;
+            height: 80px;
+        }
+
+        .header-inner .nav-link {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 25px;
+        }
+
+        .header-inner .nav-link a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .header-inner .nav-link a:hover {
+            color: var(--primary-blue);
             transform: translateY(-2px);
         }
 
-        .btn-primary:disabled {
-            background: #9ca3af;
-            cursor: not-allowed;
-            transform: none;
+        .header-inner .buttons {
+            display: flex;
+            gap: 15px;
+            align-items: center;
         }
 
-        /* RESPONSIVE */
+        /* Hide the default sticky header initially on this page */
+        #headerSticky {
+            display: none !important;
+        }
+
+        /* Title Section */
+        .title-section {
+            padding: 80px 20px 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .title-section h1 {
+            font-size: 52px;
+            font-weight: 800;
+            color: var(--primary-blue);
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .title-section h2 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #000;
+            margin: 10px 0;
+        }
+
+        .title-section p {
+            font-size: 15px;
+            color: var(--text-grey);
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+
+        /* Form Container */
+        .form-container {
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 20px;
+        }
+
+        .form-card {
+            background: #fff;
+            padding: 20px 0;
+        }
+
+        .form-section {
+            display: none;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .form-section-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--text-dark);
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        /* Grid Layout */
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px 45px;
+            margin-bottom: 50px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .form-group.full-width {
+            grid-column: span 2;
+        }
+
+        .form-group label {
+            font-size: 15px;
+            font-weight: 700;
+            color: var(--text-dark);
+        }
+
+        .form-group label span {
+            color: #ff0000;
+            margin-left: 3px;
+        }
+
+        /* Input Styles */
+        .form-control {
+            width: 100%;
+            padding: 16px 22px;
+            background-color: var(--bg-light);
+            border: 1.5px solid #E5E7EB;
+            border-radius: 14px;
+            font-family: 'Google Sans', sans-serif;
+            font-size: 16px;
+            color: #333;
+            transition: all 0.2s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--secondary-blue);
+            background-color: #fff;
+            box-shadow: 0 0 0 5px rgba(42, 52, 141, 0.08);
+        }
+
+        /* Radio Group */
+        .radio-group {
+            display: flex;
+            gap: 40px;
+            padding: 12px 0;
+            flex-wrap: wrap;
+        }
+
+        .radio-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .radio-item input[type="radio"] {
+            width: 22px;
+            height: 22px;
+            cursor: pointer;
+            accent-color: var(--secondary-blue);
+        }
+
+        /* File Upload Style */
+        .file-upload-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-upload {
+            width: fit-content;
+            padding: 12px 28px;
+            background: #fff;
+            border: 1.5px solid #E5E7EB;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            color: var(--text-dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-upload:hover {
+            border-color: var(--text-grey);
+            background: #F9FAFB;
+        }
+
+        .file-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .file-name {
+            font-size: 14px;
+            color: var(--text-grey);
+            word-break: break-all;
+        }
+
+        /* Navigation Buttons */
+        .form-navigation {
+            display: flex;
+            gap: 25px;
+            margin-top: 80px;
+        }
+
+        .btn-prev {
+            flex: 1;
+            padding: 20px;
+            background-color: #04293B;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-prev:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(4, 41, 59, 0.2);
+        }
+
+        .btn-next {
+            flex: 1;
+            padding: 20px;
+            background-color: var(--accent-yellow);
+            color: #000;
+            border: none;
+            border-radius: 12px;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .btn-next:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(255, 231, 1, 0.3);
+        }
+
+        /* Hide Scroll Top on this page to match image */
+        #scrollTop {
+            display: none !important;
+        }
+
         @media (max-width: 768px) {
-            .join-us-form {
-                padding: 40px 0;
+            .header-inner .nav-link {
+                display: none;
             }
-
-            .join-us-form form {
-                padding: 25px;
+            .form-grid {
+                grid-template-columns: 1fr;
             }
-
-            .form-section h2 {
-                font-size: 18px;
+            .form-group.full-width {
+                grid-column: span 1;
+            }
+            .title-section h1 {
+                font-size: 38px;
             }
         }
     </style>
 @endpush
 
-@section('content')
-    <section class="hero-abouts">
-        <div class="hero-about" data-aos="fade-up">
-            <h1>Join Us</h1>
-            <p>Registration Form ASITA JABAR</p>
-        </div>
-    </section>
-{{-- BANNER UNTUK MEMBER YANG SUDAH ADA --}}
-        <div style="
-            max-width: 1400px;
-            margin: 50px auto 0;
-            padding: 0 20px;
-            font-family: 'Montserrat', Arial, sans-serif;
-        ">
-            <div style="
-                background: linear-gradient(135deg, #04293B 0%, #2A348D 100%);
-                border-radius: 14px;
-                padding: 28px 36px;
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 24px;
-                flex-wrap: wrap;
-            ">
-                <div>
-                    <p style="color: rgba(255,255,255,0.7); font-size: 0.8rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px;">
-                        Member Register
-                    </p>
-                    <p style="color: #fff; font-size: 1.05rem; font-weight: 800; margin: 0;">
-                        Sudah jadi anggota tapi belum terdaftar di web ASITA Jabar?
-                    </p>
-                    <p style="color: rgba(255,255,255,0.65); font-size: 0.85rem; font-weight: 500; margin-top: 6px; margin-bottom: 0;">
-                        Gunakan form khusus member — lebih singkat, tanpa upload dokumen.
-                    </p>
-                </div>
-                <a href="{{ route('member-register') }}" style="
-                    display: inline-block;
-                    background: #fff;
-                    color: #2A348D;
-                    font-size: 0.85rem;
-                    font-weight: 800;
-                    letter-spacing: 1px;
-                    text-transform: uppercase;
-                    padding: 14px 30px;
-                    border-radius: 9px;
-                    text-decoration: none;
-                    white-space: nowrap;
-                    transition: background 0.2s;
-                ">
-                    Daftar Akun Member →
+@section('hero-section')
+    <header class="custom-page-header">
+        <div class="header-inner">
+            <div class="logo">
+                <a href="{{ route('home') }}">
+                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo CAAIP">
                 </a>
             </div>
+            <div class="nav-link">
+                <a href="{{ route('home') }}">Beranda</a>
+                <a href="{{ route('organisasi') }}">Organisasi</a>
+                <a href="{{ route('e-katalog') }}">E-Catalog</a>
+                <a href="{{ route('berita') }}">Berita</a>
+            </div>
+            <div class="buttons">
+                <a href="{{ route('join-us') }}" class="btn-transparent-border-black">Jadi Anggota</a>
+                <a href="{{ route('anggota.login') }}" class="btn-yellow-border-black">Login</a>
+            </div>
         </div>
-    <section class="join-us-form">
-        <div class="container">
-            @if ($errors->any())
-                <div class="alert-danger">
-                    <strong>Terdapat kesalahan pada form:</strong>
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>{{ $error }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-            @endif
+    </header>
+@endsection
 
-            <form action="{{ route('jadi-anggota.store') }}" method="POST" enctype="multipart/form-data" id="registrationForm">
-                @csrf
+@section('content')
+    <div class="title-section">
+        <h1 data-aos="fade-up">JADI ANGGOTA</h1>
+        <h2 data-aos="fade-up" data-aos-delay="100">Formulir Pendaftaran Corps Alumni Akademi Ilmu Pelayaran</h2>
+        <p data-aos="fade-up" data-aos-delay="200">
+            Wadah resmi alumni STIP Jakarta untuk kolaborasi, karier, dan kontribusi nasional.
+        </p>
+    </div>
 
-                <!-- DATA PERUSAHAAN -->
-                <div class="form-section">
-                    <h2>Data Perusahaan</h2>
+    <div class="form-container" data-aos="fade-up" data-aos-delay="300">
+        <form action="{{ route('jadi-anggota.store') }}" method="POST" enctype="multipart/form-data" id="multiStepForm">
+            @csrf
+            
+            <!-- STEP 1: DATA PRIBADI -->
+            <div class="form-section active" id="step1">
+                <div class="form-section-title">Data Pribadi</div>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label>Nama Usaha / Brand<span>*</span></label>
+                        <input type="text" name="nama_usaha" class="form-control" placeholder="">
+                    </div>
                     
                     <div class="form-group">
-                        <label>Nama Perusahaan <span class="required">*</span></label>
-                        <input type="text" name="nama_perusahaan" value="{{ old('nama_perusahaan') }}" required>
-                        <span class="help-text">Contoh: PT. Travel Nusantara Indonesia</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Trade Mark <span class="required">*</span></label>
-                        <input type="text" name="trade_mark" value="{{ old('trade_mark') }}" required>
-                        <span class="help-text">Contoh: Nusantara Tour & Travel</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Tanggal Berdiri Perusahaan <span class="required">*</span></label>
-                        <input type="date" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}" required max="{{ date('Y-m-d') }}">
-                        <span class="help-text">Pilih tanggal berdirinya perusahaan</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Alamat Kantor <span class="required">*</span></label>
-                        <textarea name="alamat_kantor" required>{{ old('alamat_kantor') }}</textarea>
-                        <span class="help-text">Alamat lengkap kantor perusahaan</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Telepon / WhatsApp Perusahaan <span class="required">*</span></label>
-                        <input type="text" name="telepon_wa_perusahaan" value="{{ old('telepon_wa_perusahaan') }}" required pattern="[0-9+\-\s()]+" placeholder="Contoh: 0812-3456-7890">
-                        <span class="help-text">Nomor yang dapat dihubungi</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email Perusahaan <span class="required">*</span></label>
-                        <input type="email" name="email_website_perusahaan" value="{{ old('email_website_perusahaan') }}" required placeholder="email@perusahaan.com">
-                        <span class="help-text">Email ini akan digunakan untuk login</span>
-                    </div>
-                </div>
-
-                <!-- DATA PIMPINAN -->
-                <div class="form-section">
-                    <h2>Data Pimpinan</h2>
-                    
-                    <div class="form-group">
-                        <label>Nama Pimpinan <span class="required">*</span></label>
-                        <input type="text" name="nama_pimpinan" value="{{ old('nama_pimpinan') }}" required>
-                        <span class="help-text">Nama lengkap direktur/pimpinan perusahaan</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Alamat Pimpinan <span class="required">*</span></label>
-                        <textarea name="alamat_pimpinan" required>{{ old('alamat_pimpinan') }}</textarea>
-                        <span class="help-text">Alamat tempat tinggal pimpinan</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>Telepon / WhatsApp Pimpinan <span class="required">*</span></label>
-                        <input type="text" name="telepon_wa_pimpinan" value="{{ old('telepon_wa_pimpinan') }}" required pattern="[0-9+\-\s()]+" placeholder="Contoh: 0812-3456-7890">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Email Pimpinan <span class="required">*</span></label>
-                        <input type="email" name="email_pimpinan" value="{{ old('email_pimpinan') }}" required placeholder="email@pribadi.com">
-                    </div>
-                </div>
-
-                <!-- LEGALITAS -->
-                <div class="form-section">
-                    <h2>Legalitas</h2>
-                    
-                    <div class="form-group">
-                        <label>Nomor Akte Notaris <span class="required">*</span></label>
-                        <input type="text" name="akte_notaris" value="{{ old('akte_notaris') }}" required>
-                        <span class="help-text">Nomor akte pendirian perusahaan</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>NIB / TDUP <span class="required">*</span></label>
-                        <input type="text" name="nomor_induk_berusaha_tdup" value="{{ old('nomor_induk_berusaha_tdup') }}" required>
-                        <span class="help-text">Nomor Induk Berusaha atau TDUP</span>
-                    </div>
-
-                    <div class="form-group">
-                        <label>NPWP Perusahaan <span class="required">*</span></label>
-                        <input type="text" name="npwp_perusahaan" value="{{ old('npwp_perusahaan') }}" required pattern="[0-9.\-]+" placeholder="00.000.000.0-000.000">
-                        <span class="help-text">15 digit NPWP perusahaan</span>
-                    </div>
-                </div>
-
-                <!-- PRODUK USAHA -->
-                <div class="form-section">
-                    <h2>Produk Usaha</h2>
-                    
-                    <div class="checkbox-group">
-                        <label class="main-label">Pilih Produk Usaha yang Dijual <span class="required">*</span></label>
-                        <span class="help-text" style="display: block; margin-bottom: 15px;">Pilih minimal 1 produk</span>
-                        
-                        @foreach(['Tiket Pesawat', 'Tiket Kereta', 'Tiket Kapal', 'Outbound Tour', 'Inbound Tour', 'Domestic Tour', 'Dokumen Perjalanan', 'Penyewaan Mobil', 'Hotel', 'Event Organizer', 'Umrah & Haji', 'Travel Asuransi', 'Lain-lain'] as $produk)
-                            <label class="checkbox">
-                                <input type="checkbox" name="produk_usaha_yang_akan_dijual[]" value="{{ $produk }}" 
-                                    {{ in_array($produk, old('produk_usaha_yang_akan_dijual', [])) ? 'checked' : '' }}>
-                                {{ $produk }}
+                        <label>Jenis Kelamin<span>*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item">
+                                <input type="radio" name="gender" value="laki-laki"> Laki-laki
                             </label>
-                        @endforeach
+                            <label class="radio-item">
+                                <input type="radio" name="gender" value="perempuan"> Perempuan
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tempat Lahir<span>*</span></label>
+                        <input type="text" name="tempat_lahir" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Tanggal Lahir<span>*</span></label>
+                        <input type="date" name="tanggal_lahir" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Agama<span>*</span></label>
+                        <input type="text" name="agama" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Nomor Telepon (yang terhubung dengan WhatsApp)<span>*</span></label>
+                        <input type="text" name="no_telp" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Alamat Domisili<span>*</span></label>
+                        <textarea name="alamat_domisili" class="form-control" style="height: 120px;"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Kode Pos<span>*</span></label>
+                        <input type="text" name="kode_pos" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Email<span>*</span></label>
+                        <input type="email" name="email" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Nomor KTP<span>*</span></label>
+                        <input type="text" name="no_ktp" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Foto KTP<span>*</span></label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" name="foto_ktp" id="ktp" style="display: none;" onchange="updateFileName(this)">
+                            <div class="file-info">
+                                <label for="ktp" class="btn-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i> Choose File
+                                </label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Upload Foto Diri<span>*</span></label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" name="foto_diri" id="foto" style="display: none;" onchange="updateFileName(this)">
+                            <div class="file-info">
+                                <label for="foto" class="btn-upload">
+                                    <i class="fas fa-cloud-upload-alt"></i> Choose File
+                                </label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <!-- DOKUMEN -->
-                <div class="form-section">
-                    <h2>Dokumen Upload</h2>
-                    
+                <div class="form-navigation">
+                    <button type="button" class="btn-next" onclick="nextStep(2)">Berikutnya</button>
+                </div>
+            </div>
+
+            <!-- STEP 2: PROFILE PERUSAHAAN -->
+            <div class="form-section" id="step2">
+                <div class="form-section-title">Profile Perusahaan</div>
+                
+                <div class="form-grid">
                     <div class="form-group">
-                        <label>Surat Permohonan (PDF) <span class="required">*</span></label>
-                        <input type="file" name="surat_permohonan" accept=".pdf" required>
-                        <span class="help-text">Format: PDF | Maksimal: 5MB</span>
+                        <label>Nama Usaha<span>*</span></label>
+                        <input type="text" name="perusahaan_nama" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label>Akte Pendirian Perusahaan (PDF) <span class="required">*</span></label>
-                        <input type="file" name="akte_pendirian_perusahaan" accept=".pdf" required>
-                        <span class="help-text">Format: PDF | Maksimal: 5MB</span>
+                        <label>Nama Legalitas Usaha<span>*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="legalitas_tipe" value="PT"> PT</label>
+                            <label class="radio-item"><input type="radio" name="legalitas_tipe" value="CV"> CV</label>
+                            <label class="radio-item"><input type="radio" name="legalitas_tipe" value="PT Perorangan"> PT Perorangan</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Jabatan Dalam Usaha<span>*</span></label>
+                        <select name="jabatan" class="form-control">
+                            <option value="" selected disabled></option>
+                            <option value="Direktur">Direktur</option>
+                            <option value="Komisaris">Komisaris</option>
+                            <option value="Manager">Manager</option>
+                            <option value="Staff">Staff</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Alamat Kantor<span>*</span></label>
+                        <textarea name="perusahaan_alamat" class="form-control" style="height: 120px;"></textarea>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Bidang Usaha (Utama)<span>*</span></label>
+                        <input type="text" name="bidang_usaha" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label>NIB / TDUP (PDF) <span class="required">*</span></label>
-                        <input type="file" name="nib_atau_tdup" accept=".pdf" required>
-                        <span class="help-text">Format: PDF | Maksimal: 5MB</span>
+                        <label>Brand Usaha<span>*</span></label>
+                        <input type="text" name="brand_usaha" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label>KTP Pimpinan (Gambar) <span class="required">*</span></label>
-                        <input type="file" name="ktp_pimpinan" accept="image/jpeg,image/jpg,image/png" required>
-                        <span class="help-text">Format: JPG, PNG | Maksimal: 5MB</span>
+                        <label>Jumlah Karyawan<span>*</span></label>
+                        <input type="text" name="jumlah_karyawan" class="form-control">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Nomor KTP<span>*</span></label>
+                        <input type="text" name="perusahaan_no_ktp" class="form-control">
                     </div>
 
                     <div class="form-group">
-                        <label>NPWP Perusahaan (PDF) <span class="required">*</span></label>
-                        <input type="file" name="npwp_perusahaan_file" accept=".pdf" required>
-                        <span class="help-text">Format: PDF | Maksimal: 5MB</span>
+                        <label>Lama Berdiri<span>*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="< 1 Tahun"> < 1 Tahun</label>
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="1 - 2 Tahun"> 1 - 2 Tahun</label>
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="2 - 5 Tahun"> 2 - 5 Tahun</label>
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="> 5 Tahun"> > 5 Tahun</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Omset Perusahaan PerTahun<span>*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="omset" value="< Rp 1.000.000.000"> < Rp 1.000.000.000</label>
+                            <label class="radio-item"><input type="radio" name="omset" value="Rp 1.000.000.000 - Rp 4.000.000.000"> Rp 1.000.000.000 - Rp 4.000.000.000</label>
+                            <label class="radio-item"><input type="radio" name="omset" value="> Rp 4.000.000.000"> > Rp 4.000.000.000</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>NPWP Perusahaan<span>*</span></label>
+                        <input type="text" name="npwp" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>No. Akta Pendirian<span>*</span></label>
+                        <input type="text" name="no_akta" class="form-control">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Unggah Profile Perusahaan<span>*</span></label>
+                        <div style="font-size: 12px; color: #666; margin-bottom: 10px;">
+                            Mohon unggah Profile Perusahaan dalam bentuk PDF.<br>
+                            Profile Perusahaan harus memuat minimal:<br>
+                            1. Logo Perusahaan, 2. Kontak Perusahaan, 3. Email Perusahaan, 4. Media Sosial, 5. Website, 6. Logo Brand, 7. Deskripsi Brand, 8. Foto Kegiatan Usaha.
+                        </div>
+                        <div class="file-upload-wrapper">
+                            <input type="file" name="file_profile" id="file_profile" style="display: none;" onchange="updateFileName(this)">
+                            <div class="file-info">
+                                <label for="file_profile" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose File</label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Unggah Logo Perusahaan<span>*</span></label>
+                        <div class="file-upload-wrapper">
+                            <input type="file" name="file_logo" id="file_logo" style="display: none;" onchange="updateFileName(this)">
+                            <div class="file-info">
+                                <label for="file_logo" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose File</label>
+                                <span class="file-name">No file chosen</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary" id="submitBtn">
-                    SUBMIT PENDAFTARAN
-                </button>
-            </form>
-        </div>
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="nextStep(1)">Sebelumnya</button>
+                    <button type="button" class="btn-next" onclick="nextStep(3)">Berikutnya</button>
+                </div>
+            </div>
 
-        
-    </section>
+            <!-- STEP 3: ORGANISASI & DAFTAR -->
+            <div class="form-section" id="step3">
+                <div class="form-section-title">Organisasi</div>
+                
+                <div class="form-grid">
+                    <div class="form-group full-width">
+                        <label>SFC HIPMI<span>*</span></label>
+                        <input type="text" name="sfc_hipmi" class="form-control">
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Apakah anda referensi dari Anggota HIPMI?<span>*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="ref_hipmi" value="Ya"> Ya</label>
+                            <label class="radio-item"><input type="radio" name="ref_hipmi" value="Tidak"> Tidak</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group full-width">
+                        <label>Apakah Anda aktif di organisasi selain HIPMI?<span>*</span></label>
+                        <div class="radio-group">
+                            <label class="radio-item"><input type="radio" name="aktif_org_lain" value="Ya"> Ya</label>
+                            <label class="radio-item"><input type="radio" name="aktif_org_lain" value="Tidak"> Tidak</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section-title">Daftar</div>
+                <div class="form-group full-width" style="margin-bottom: 40px;">
+                    <p style="font-size: 14px; font-weight: 600;">Dengan ini saya menyatakan bahwa data yang saya isi adalah benar dan valid<span>*</span></p>
+                    <label class="radio-item">
+                        <input type="checkbox" name="setuju" style="width: 20px; height: 20px;"> Ya, saya setuju
+                    </label>
+                </div>
+
+                <div class="form-navigation">
+                    <button type="button" class="btn-prev" onclick="nextStep(2)">Sebelumnya</button>
+                    <button type="submit" class="btn-next">Kirim Pendaftaran</button>
+                </div>
+            </div>
+        </form>
+    </div>
 @endsection
 
 @push('scripts')
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('registrationForm');
-        const submitBtn = document.getElementById('submitBtn');
-        
-        // File size validation
-        const fileInputs = form.querySelectorAll('input[type="file"]');
-        fileInputs.forEach(input => {
-            input.addEventListener('change', function() {
-                const maxSize = 5 * 1024 * 1024; // 5MB
-                if (this.files[0] && this.files[0].size > maxSize) {
-                    alert('Ukuran file ' + this.previousElementSibling.textContent + ' melebihi 5MB');
-                    this.value = '';
-                }
+    <script>
+        function nextStep(step) {
+            // Hide all sections
+            document.querySelectorAll('.form-section').forEach(section => {
+                section.classList.remove('active');
             });
-        });
+            // Show target section
+            document.getElementById('step' + step).classList.add('active');
+            // Scroll to top of form
+            window.scrollTo({ top: document.querySelector('.title-section').offsetTop - 50, behavior: 'smooth' });
+        }
 
-        // Form submission
-        form.addEventListener('submit', function(e) {
-            // Check if at least one checkbox is checked
-            const checkboxes = form.querySelectorAll('input[name="produk_usaha_yang_akan_dijual[]"]');
-            const isChecked = Array.from(checkboxes).some(cb => cb.checked);
-            
-            if (!isChecked) {
-                e.preventDefault();
-                alert('Pilih minimal 1 produk usaha yang dijual');
-                return false;
-            }
-
-            // Disable submit button to prevent double submission
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'MENGIRIM DATA...';
-        });
-    });
-</script>
+        function updateFileName(input) {
+            const fileName = input.files[0] ? input.files[0].name : "No file chosen";
+            input.parentElement.querySelector('.file-name').textContent = fileName;
+        }
+    </script>
 @endpush

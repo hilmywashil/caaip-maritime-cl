@@ -111,8 +111,11 @@
 </div>
 
 <style>
+    footer a {
+        transition: all 0.2s;
+    }
+
     footer a:hover {
         color: #FFE701 !important;
-        padding-left: 5px;
     }
 </style>

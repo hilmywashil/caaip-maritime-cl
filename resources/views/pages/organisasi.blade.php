@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Beranda')
+@section('title', 'Struktur Organisasi')
 
 @section('hero-background', asset('assets-front/images/foto_16.jpg'))
 @section('page-title', 'STRUKTUR ORGANISASI')

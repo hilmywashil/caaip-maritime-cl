@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Jadi Anggota - Corps Alumni Akademi Ilmu Pelayaran')
+@section('title', 'Jadi Anggota')
 
 @push('styles')
     <style>

@@ -101,7 +101,7 @@
     <div
         style="max-width: 1300px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px;">
         <p style="font-size: 13px; margin: 0;">Copyright © 2026 Maritime | Powered by <a
-                href="https://www.cyberlabs.co.id"
+                href="https://www.cyberlabs.co.id" target="_blank"
                 style="color: #fff; text-decoration: none; font-weight: 600;">CyberLabs</a></p>
         <div style="display: flex; gap: 30px;">
             <a href="#" style="color: #fff; text-decoration: none; font-size: 13px;">Privacy Policy</a>

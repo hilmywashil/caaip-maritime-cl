@@ -2,39 +2,14 @@
 
 @section('title', 'Beranda')
 
-@section('hero-section')
-    <section class="wrapper-page">
-        <div class="page-banner">
-            <div class="page-header">
-                <div class="header-inner">
-                    <div class="logo">
-                        <a href="{{ route('home') }}">
-                            <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo CAAIP">
-                        </a>
-                    </div>
-                    <div class="nav-link">
-                        <a href="{{ route('home') }}">Beranda</a>
-                        <a href="{{ route('organisasi') }}">Organisasi</a>
-                        <a href="{{ route('e-katalog') }}">E-Catalog</a>
-                        <a href="{{ route('berita') }}">Berita</a>
-                    </div>
-                    <div class="buttons">
-                        <a href="{{ route('join-us') }}" class="btn-white">Jadi Anggota</a>
-                        <a href="{{ route('anggota.login') }}" class="btn-yellow">Login</a>
-                    </div>
-                </div>
-            </div>
-            <div class="page-title" data-aos="fade-up">
-                <h1>MENGHUBUNGKAN ALUMNI</h1>
-                <h2>Membangun Maritim Indonesia</h2>
-                <p>Wadah resmi alumni STIP Jakarta untuk kolaborasi, karier, dan kontribusi nasional.</p>
-                <div class="buttons">
-                    <a href="{{ route('about') }}" class="btn-white">Tentang Kami</a>
-                    <a href="{{ route('contact') }}" class="btn-yellow">Kontak Kami</a>
-                </div>
-            </div>
-        </div>
-    </section>
+@section('hero-background', asset('assets-front/images/hero_bg.jpg'))
+@section('page-title', 'MENGHUBUNGKAN ALUMNI')
+@section('page-subtitle', 'Membangun Maritim Indonesia')
+@section('page-description', 'Wadah resmi alumni STIP Jakarta untuk kolaborasi, karier, dan kontribusi nasional.')
+@section('hero-buttons', 'show')
+
+@section('content')
+    @include('layouts.components.hero')
     <section class="wrapper-white-1">
         <div class="about-section" data-aos="fade-up">
             <div class="left">
@@ -191,7 +166,7 @@
     <section class="wrapper-white-1">
         <div class="kegiatan-section" data-aos="fade-up">
             <div>
-                <h2>Informasi Kegiatan Kami</h2>
+                <h2>Berita dan Kegiatan Kami</h2>
                 <p>CAAIP secara aktif menyelenggarakan berbagai kegiatan yang bertujuan untuk mempererat hubungan antar
                     alumni, meningkatkan kompetensi, serta memberikan kontribusi nyata bagi masyarakat dan industri maritim.
                 </p>
@@ -319,7 +294,7 @@
         </div>
     </section>
     <section class="wrapper-white-1">
-        <div class="katalog-section">
+        <div class="katalog-section" data-aos="fade-up">
             <div>
                 <h2>E-Catalog</h2>
                 <p>Sebagai bentuk dukungan terhadap kemandirian ekonomi dan kewirausahaan alumni, CAAIP menghadirkan
@@ -384,14 +359,16 @@
                     </div>
                 </div>
             </div>
+            <a href="{{ route('e-katalog') }}" class="btn-yellow-text-black">Lihat Lebih Banyak</a>
         </div>
     </section>
     <section class="wrapper-image-2">
-        <div class="bergabung-section">
+        <div class="bergabung-section" data-aos="fade-up">
             <h1>“Jadilah bagian dari jaringan alumni maritim terbesar di Indonesia.”</h1>
             <a href="{{ route('buku-anggota') }}" class="btn-yellow">Hubungi Kami</a>
         </div>
     </section>
+    <div class="red-bottom-divider"></div>
 @endsection
 
 @push('scripts')

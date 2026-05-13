@@ -1,4 +1,4 @@
-<footer class="site-footer">
+<footer class="site-footer" id="contact">
     <div class="footer-grid">
         <!-- Logo & Description -->
         <div class="footer-brand">

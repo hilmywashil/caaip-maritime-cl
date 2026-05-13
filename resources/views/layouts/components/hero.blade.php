@@ -31,7 +31,7 @@
             @if (trim($__env->yieldContent('hero-buttons')) == 'show')
                 <div class="buttons">
                     <a href="{{ route('about') }}" class="btn-white">Tentang Kami</a>
-                    <a href="{{ route('contact') }}" class="btn-yellow">Kontak Kami</a>
+                    <a href="#contact" class="btn-yellow">Kontak Kami</a>
                 </div>
             @endif
         </div>

@@ -133,7 +133,6 @@
             </nav>
 
             ${buttons.length ? `
-                <div class="drawer-divider"></div>
                 <div class="drawer-buttons">
                     ${Array.from(buttons).map((btn, i) =>
                 `<a href="${btn.getAttribute('href')}"

@@ -4,6 +4,11 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 body {
     font-family: 'Google Sans', sans-serif;
     margin: 0;
@@ -561,13 +566,13 @@ body {
 }
 
 .anggota-section .grid {
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
 
 .anggota-section .item {
+    width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -578,8 +583,8 @@ body {
 }
 
 .anggota-section .item img {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: cover;
 }
 
@@ -596,7 +601,7 @@ body {
     text-align: center;
     color: #000;
     max-width: 700px;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .kegiatan-section {
@@ -804,13 +809,13 @@ body {
 }
 
 .katalog-section .grid {
-    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 }
 
 .katalog-section .item {
+    width: 250px;
     display: flex;
     flex-direction: column;
     justify-content: center;

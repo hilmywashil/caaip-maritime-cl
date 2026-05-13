@@ -13,62 +13,42 @@
     <section class="wrapper-white-1">
         <div class="katalog-section" data-aos="fade-up">
             <div class="grid">
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                        <div>
+                            <h3>Nama Bisnis</h3>
+                            <p>Bidang</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
+                </a>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                        <div>
+                            <h3>Nama Bisnis</h3>
+                            <p>Bidang</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
+                </a>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                        <div>
+                            <h3>Nama Bisnis</h3>
+                            <p>Bidang</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
+                </a>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                        <div>
+                            <h3>Nama Bisnis</h3>
+                            <p>Bidang</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
+                </a>
             </div>
         </div>
     </section>

@@ -131,34 +131,42 @@
                 </p>
             </div>
             <div class="grid">
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Anggota</h3>
-                        <p>Jabatan</p>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/people/iko_johansyah.png') }}" alt="Logo">
+                        <div>
+                            <h3>{{ Str::words('Iko Johansyah', 2, '') }}</h3>
+                            <p>Ketua Umum Corps Alumni Akademi Ilmu Pelayaran masa bakti 2023–2027</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Anggota</h3>
-                        <p>Jabatan</p>
+                </a>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/people/iko_johansyah.png') }}" alt="Logo">
+                        <div>
+                            <h3>{{ Str::words('Iko Johansyah', 2, '') }}</h3>
+                            <p>Ketua Umum Corps Alumni Akademi Ilmu Pelayaran masa bakti 2023–2027</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Anggota</h3>
-                        <p>Jabatan</p>
+                </a>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/people/iko_johansyah.png') }}" alt="Logo">
+                        <div>
+                            <h3>{{ Str::words('Iko Johansyah', 2, '') }}</h3>
+                            <p>Ketua Umum Corps Alumni Akademi Ilmu Pelayaran masa bakti 2023–2027</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Anggota</h3>
-                        <p>Jabatan</p>
+                </a>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/people/iko_johansyah.png') }}" alt="Logo">
+                        <div>
+                            <h3>{{ Str::words('Iko Johansyah', 2, '') }}</h3>
+                            <p>Ketua Umum Corps Alumni Akademi Ilmu Pelayaran masa bakti 2023–2027</p>
+                        </div>
                     </div>
-                </div>
+                </a>
             </div>
             <a href="{{ route('buku-anggota') }}" class="btn-yellow">Lihat Selengkapnya</a>
         </div>
@@ -302,62 +310,15 @@
                 </p>
             </div>
             <div class="grid">
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
+                <a href="#">
+                    <div class="item">
+                        <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
+                        <div>
+                            <h3>Nama Bisnis</h3>
+                            <p>Bidang</p>
+                        </div>
                     </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
-                <div class="item">
-                    <img src="{{ asset('assets-front/images/logo_caaip.png') }}" alt="Logo">
-                    <div>
-                        <h3>Nama Bisnis</h3>
-                        <p>Bidang</p>
-                    </div>
-                </div>
+                </a>
             </div>
             <a href="{{ route('e-katalog') }}" class="btn-yellow-text-black">Lihat Lebih Banyak</a>
         </div>

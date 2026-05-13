@@ -4,6 +4,10 @@
 
 @push('styles')
     <style>
+        /* ==============================================
+       JOIN US PAGE
+       ============================================== */
+
         :root {
             --primary-blue: #090B62;
             --secondary-blue: #2A348D;
@@ -13,14 +17,16 @@
             --bg-light: #F8F9FA;
         }
 
-        body {
-            font-family: 'Google Sans', sans-serif !important;
-            background-color: #fff;
-            margin: 0;
-            padding: 0;
+        /* Hide sticky header & scroll-top on this page */
+        #headerSticky {
+            display: none !important;
         }
 
-        /* Custom Header for Join Us Page */
+        #scrollTop {
+            display: none !important;
+        }
+
+        /* ── Custom Page Header ── */
         .custom-page-header {
             width: 100%;
             display: flex;
@@ -30,7 +36,7 @@
             border-bottom: 1px solid #eee;
         }
 
-        .header-inner {
+        .custom-page-header .header-inner {
             width: 100%;
             max-width: 1300px;
             display: flex;
@@ -39,43 +45,52 @@
             position: relative;
         }
 
-        .header-inner .logo img {
+        .custom-page-header .header-inner .logo img {
             width: 80px;
             height: 80px;
+            display: block;
         }
 
-        .header-inner .nav-link {
+        .custom-page-header .header-inner .nav-link {
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             gap: 25px;
+            align-items: center;
         }
 
-        .header-inner .nav-link a {
+        .custom-page-header .header-inner .nav-link a {
             text-decoration: none;
             color: #000;
             font-weight: 400;
             transition: all 0.2s;
+            font-size: 15px;
+            white-space: nowrap;
         }
 
-        .header-inner .nav-link a:hover {
-            color: #FFE701;
+        .custom-page-header .header-inner .nav-link a:hover {
+            color: var(--accent-yellow);
             transform: translateY(-2px);
         }
 
-        .header-inner .buttons {
+        .custom-page-header .header-inner .nav-link a.active {
+            font-weight: 700;
+        }
+
+        .custom-page-header .header-inner .buttons {
             display: flex;
-            gap: 25px;
+            gap: 16px;
             align-items: center;
+            margin-left: auto;
         }
 
-        /* Hide the default sticky header initially on this page */
-        #headerSticky {
-            display: none !important;
+        /* ── Hamburger color override for white bg header ── */
+        .custom-page-header .hamburger span {
+            background-color: #000;
         }
 
-        /* Title Section */
+        /* ── Title Section ── */
         .title-section {
             padding: 80px 20px 40px;
             text-align: center;
@@ -90,34 +105,97 @@
             margin: 0;
             text-transform: uppercase;
             letter-spacing: 2px;
+            line-height: 1.1;
         }
 
         .title-section h2 {
-            font-size: 26px;
+            font-size: 20px;
             font-weight: 600;
             color: #000;
-            margin: 10px 0;
+            margin: 12px 0 0;
         }
 
         .title-section p {
             font-size: 15px;
             color: var(--text-grey);
             line-height: 1.6;
-            margin-top: 20px;
+            margin-top: 16px;
         }
 
-        /* Form Container */
+        /* ── Form Container ── */
         .form-container {
             max-width: 1200px;
             margin: 0 auto 100px;
             padding: 0 20px;
         }
 
-        .form-card {
-            background: #fff;
-            padding: 20px 0;
+        /* ── Step Indicator ── */
+        .step-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 50px;
+            padding-top: 20px;
         }
 
+        .step-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .step-circle {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background-color: #E5E7EB;
+            color: #9ca3af;
+            font-weight: 800;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .step-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #9ca3af;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .step-item.active .step-circle {
+            background-color: var(--primary-blue);
+            color: var(--accent-yellow);
+        }
+
+        .step-item.active .step-label {
+            color: var(--primary-blue);
+        }
+
+        .step-item.done .step-circle {
+            background-color: var(--secondary-blue);
+            color: #fff;
+        }
+
+        .step-item.done .step-label {
+            color: var(--secondary-blue);
+        }
+
+        .step-line {
+            flex: 1;
+            max-width: 120px;
+            height: 2px;
+            background-color: #E5E7EB;
+            margin: 0 12px;
+            margin-bottom: 26px;
+        }
+
+        /* ── Form Sections ── */
         .form-section {
             display: none;
         }
@@ -127,14 +205,14 @@
         }
 
         .form-section-title {
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 40px;
+            margin-bottom: 36px;
             padding-top: 20px;
         }
 
-        /* Grid Layout */
+        /* ── Form Grid ── */
         .form-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -163,7 +241,7 @@
             margin-left: 3px;
         }
 
-        /* Input Styles */
+        /* ── Inputs ── */
         .form-control {
             width: 100%;
             padding: 16px 22px;
@@ -174,6 +252,8 @@
             font-size: 16px;
             color: #333;
             transition: all 0.2s;
+            box-sizing: border-box;
+            appearance: auto;
         }
 
         .form-control:focus {
@@ -183,12 +263,22 @@
             box-shadow: 0 0 0 5px rgba(42, 52, 141, 0.08);
         }
 
-        /* Radio Group */
+        .form-control.textarea {
+            height: 120px;
+            resize: vertical;
+        }
+
+        /* ── Radio Group ── */
         .radio-group {
             display: flex;
-            gap: 40px;
+            gap: 30px;
             padding: 12px 0;
             flex-wrap: wrap;
+        }
+
+        .radio-group--wrap {
+            flex-direction: column;
+            gap: 10px;
         }
 
         .radio-item {
@@ -201,13 +291,27 @@
         }
 
         .radio-item input[type="radio"] {
-            width: 22px;
-            height: 22px;
+            width: 20px;
+            height: 20px;
             cursor: pointer;
             accent-color: var(--secondary-blue);
+            flex-shrink: 0;
         }
 
-        /* File Upload Style */
+        /* ── Checkbox ── */
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            accent-color: var(--secondary-blue);
+            flex-shrink: 0;
+        }
+
+        /* ── File Upload ── */
+        .file-hidden {
+            display: none;
+        }
+
         .file-upload-wrapper {
             display: flex;
             flex-direction: column;
@@ -228,6 +332,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            white-space: nowrap;
         }
 
         .btn-upload:hover {
@@ -239,25 +344,45 @@
             display: flex;
             align-items: center;
             gap: 10px;
+            flex-wrap: wrap;
         }
 
         .file-name {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-grey);
             word-break: break-all;
         }
 
-        /* Navigation Buttons */
+        /* ── Upload hint text ── */
+        .upload-hint {
+            font-size: 12px;
+            color: #666;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ── Agreement block ── */
+        .form-agree {
+            margin-bottom: 40px;
+        }
+
+        .agree-text {
+            font-size: 14px;
+            font-weight: 600;
+            margin: 0 0 12px;
+        }
+
+        /* ── Navigation Buttons ── */
         .form-navigation {
             display: flex;
-            gap: 25px;
-            margin-top: 80px;
+            gap: 20px;
+            margin-top: 60px;
         }
 
         .btn-prev {
             font-family: 'Google Sans', sans-serif;
             flex: 1;
-            padding: 20px;
+            padding: 18px 20px;
             background-color: #04293B;
             color: #fff;
             border: none;
@@ -272,12 +397,13 @@
 
         .btn-prev:hover {
             transform: translateY(-2px);
+            opacity: 0.9;
         }
 
         .btn-next {
             font-family: 'Google Sans', sans-serif;
             flex: 1;
-            padding: 20px;
+            padding: 18px 20px;
             background-color: var(--accent-yellow);
             color: #000;
             border: none;
@@ -295,28 +421,144 @@
             transform: translateY(-2px);
         }
 
-        /* Hide Scroll Top on this page to match image */
-        #scrollTop {
-            display: none !important;
-        }
+        /* ==============================================
+       RESPONSIVE
+       ============================================== */
 
-        @media (max-width: 768px) {
-            .header-inner .nav-link {
-                display: none;
+        /* ── Tablet: 1024px ── */
+        @media (max-width: 1024px) {
+            .title-section h1 {
+                font-size: 42px;
             }
 
             .form-grid {
+                gap: 20px 30px;
+            }
+
+            .step-line {
+                max-width: 80px;
+            }
+        }
+
+        /* ── Mobile: 900px (hamburger header) ── */
+        @media (max-width: 900px) {
+
+            .custom-page-header .header-inner .nav-link,
+            .custom-page-header .header-inner .buttons {
+                display: none !important;
+            }
+
+            .custom-page-header .header-inner .hamburger {
+                display: flex;
+            }
+        }
+
+        /* ── Mobile: 768px ── */
+        @media (max-width: 768px) {
+            .title-section {
+                padding: 50px 16px 30px;
+            }
+
+            .title-section h1 {
+                font-size: 32px;
+                letter-spacing: 1px;
+            }
+
+            .title-section h2 {
+                font-size: 16px;
+            }
+
+            .title-section p {
+                font-size: 14px;
+            }
+
+            /* Form grid: 1 kolom */
+            .form-grid {
                 grid-template-columns: 1fr;
+                gap: 20px;
             }
 
             .form-group.full-width {
                 grid-column: span 1;
             }
 
-            .title-section h1 {
-                font-size: 38px;
+            .form-section-title {
+                font-size: 22px;
+            }
+
+            /* Navigation buttons stack on very small screens */
+            .form-navigation {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 40px;
+            }
+
+            .btn-prev,
+            .btn-next {
+                font-size: 15px;
+                padding: 16px;
+            }
+
+            /* Step indicator smaller */
+            .step-circle {
+                width: 36px;
+                height: 36px;
+                font-size: 14px;
+            }
+
+            .step-label {
+                font-size: 11px;
+            }
+
+            .step-line {
+                max-width: 40px;
+                margin: 0 6px;
+                margin-bottom: 22px;
+            }
+
+            /* Radio group vertical on mobile */
+            .radio-group {
+                gap: 14px;
+                flex-direction: column;
+            }
+
+            /* Header logo smaller */
+            .custom-page-header .header-inner .logo img {
+                width: 56px;
+                height: 56px;
+            }
+
+            .custom-page-header {
+                padding: 14px 16px;
             }
         }
+
+        /* ── Small: 480px ── */
+        @media (max-width: 480px) {
+            .title-section h1 {
+                font-size: 26px;
+            }
+
+            .form-container {
+                margin-bottom: 60px;
+                padding: 0 14px;
+            }
+
+            .form-control {
+                padding: 13px 16px;
+                font-size: 15px;
+                border-radius: 10px;
+            }
+
+            .btn-upload {
+                padding: 10px 18px;
+                font-size: 13px;
+            }
+
+            .step-indicator {
+                margin-bottom: 30px;
+            }
+        }   
     </style>
 @endpush
 
@@ -357,6 +599,24 @@
     <div class="form-container" data-aos="fade-up" data-aos-delay="300">
         <form action="{{ route('jadi-anggota.store') }}" method="POST" enctype="multipart/form-data" id="multiStepForm">
             @csrf
+
+            <!-- STEP INDICATOR -->
+            <div class="step-indicator">
+                <div class="step-item active" id="indicator-1">
+                    <div class="step-circle">1</div>
+                    <span class="step-label">Data Pribadi</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" id="indicator-2">
+                    <div class="step-circle">2</div>
+                    <span class="step-label">Perusahaan</span>
+                </div>
+                <div class="step-line"></div>
+                <div class="step-item" id="indicator-3">
+                    <div class="step-circle">3</div>
+                    <span class="step-label">Organisasi</span>
+                </div>
+            </div>
 
             <!-- STEP 1: DATA PRIBADI -->
             <div class="form-section active" id="step1">
@@ -402,7 +662,7 @@
 
                     <div class="form-group full-width">
                         <label>Alamat Domisili<span>*</span></label>
-                        <textarea name="alamat_domisili" class="form-control" style="height: 120px;"></textarea>
+                        <textarea name="alamat_domisili" class="form-control textarea"></textarea>
                     </div>
 
                     <div class="form-group">
@@ -423,8 +683,7 @@
                     <div class="form-group">
                         <label>Upload Foto KTP<span>*</span></label>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="foto_ktp" id="ktp" style="display: none;"
-                                onchange="updateFileName(this)">
+                            <input type="file" name="foto_ktp" id="ktp" class="file-hidden" onchange="updateFileName(this)">
                             <div class="file-info">
                                 <label for="ktp" class="btn-upload">
                                     <i class="fas fa-cloud-upload-alt"></i> Choose File
@@ -437,7 +696,7 @@
                     <div class="form-group">
                         <label>Upload Foto Diri<span>*</span></label>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="foto_diri" id="foto" style="display: none;"
+                            <input type="file" name="foto_diri" id="foto" class="file-hidden"
                                 onchange="updateFileName(this)">
                             <div class="file-info">
                                 <label for="foto" class="btn-upload">
@@ -487,7 +746,7 @@
 
                     <div class="form-group full-width">
                         <label>Alamat Kantor<span>*</span></label>
-                        <textarea name="perusahaan_alamat" class="form-control" style="height: 120px;"></textarea>
+                        <textarea name="perusahaan_alamat" class="form-control textarea"></textarea>
                     </div>
 
                     <div class="form-group full-width">
@@ -512,28 +771,27 @@
 
                     <div class="form-group">
                         <label>Lama Berdiri<span>*</span></label>
-                        <div class="radio-group">
-                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="< 1 Tahun">
-                                < 1 Tahun</label>
-                                    <label class="radio-item"><input type="radio" name="lama_berdiri" value="1 - 2 Tahun"> 1
-                                        - 2 Tahun</label>
-                                    <label class="radio-item"><input type="radio" name="lama_berdiri" value="2 - 5 Tahun"> 2
-                                        - 5 Tahun</label>
-                                    <label class="radio-item"><input type="radio" name="lama_berdiri" value="> 5 Tahun"> > 5
-                                        Tahun</label>
+                        <div class="radio-group radio-group--wrap">
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="< 1 Tahun"> &lt; 1
+                                Tahun</label>
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="1 - 2 Tahun"> 1 - 2
+                                Tahun</label>
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="2 - 5 Tahun"> 2 - 5
+                                Tahun</label>
+                            <label class="radio-item"><input type="radio" name="lama_berdiri" value="> 5 Tahun"> &gt; 5
+                                Tahun</label>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>Omset Perusahaan PerTahun<span>*</span></label>
-                        <div class="radio-group">
-                            <label class="radio-item"><input type="radio" name="omset" value="< Rp 1.000.000.000">
-                                < Rp 1.000.000.000</label>
-                                    <label class="radio-item"><input type="radio" name="omset"
-                                            value="Rp 1.000.000.000 - Rp 4.000.000.000"> Rp 1.000.000.000 - Rp
-                                        4.000.000.000</label>
-                                    <label class="radio-item"><input type="radio" name="omset" value="> Rp 4.000.000.000"> >
-                                        Rp 4.000.000.000</label>
+                        <div class="radio-group radio-group--wrap">
+                            <label class="radio-item"><input type="radio" name="omset" value="< Rp 1.000.000.000"> &lt; Rp
+                                1.000.000.000</label>
+                            <label class="radio-item"><input type="radio" name="omset"
+                                    value="Rp 1.000.000.000 - Rp 4.000.000.000"> Rp 1M - Rp 4M</label>
+                            <label class="radio-item"><input type="radio" name="omset" value="> Rp 4.000.000.000"> &gt; Rp
+                                4.000.000.000</label>
                         </div>
                     </div>
 
@@ -549,14 +807,14 @@
 
                     <div class="form-group">
                         <label>Unggah Profile Perusahaan<span>*</span></label>
-                        <div style="font-size: 12px; color: #666; margin-bottom: 10px;">
+                        <p class="upload-hint">
                             Mohon unggah Profile Perusahaan dalam bentuk PDF.<br>
                             Profile Perusahaan harus memuat minimal:<br>
                             1. Logo Perusahaan, 2. Kontak Perusahaan, 3. Email Perusahaan, 4. Media Sosial, 5. Website, 6.
                             Logo Brand, 7. Deskripsi Brand, 8. Foto Kegiatan Usaha.
-                        </div>
+                        </p>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="file_profile" id="file_profile" style="display: none;"
+                            <input type="file" name="file_profile" id="file_profile" class="file-hidden"
                                 onchange="updateFileName(this)">
                             <div class="file-info">
                                 <label for="file_profile" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose
@@ -569,7 +827,7 @@
                     <div class="form-group">
                         <label>Unggah Logo Perusahaan<span>*</span></label>
                         <div class="file-upload-wrapper">
-                            <input type="file" name="file_logo" id="file_logo" style="display: none;"
+                            <input type="file" name="file_logo" id="file_logo" class="file-hidden"
                                 onchange="updateFileName(this)">
                             <div class="file-info">
                                 <label for="file_logo" class="btn-upload"><i class="fas fa-cloud-upload-alt"></i> Choose
@@ -614,11 +872,11 @@
                 </div>
 
                 <div class="form-section-title">Daftar</div>
-                <div class="form-group full-width" style="margin-bottom: 40px;">
-                    <p style="font-size: 14px; font-weight: 600;">Dengan ini saya menyatakan bahwa data yang saya isi adalah
-                        benar dan valid<span>*</span></p>
+                <div class="form-group full-width form-agree">
+                    <p class="agree-text">Dengan ini saya menyatakan bahwa data yang saya isi adalah benar dan
+                        valid<span>*</span></p>
                     <label class="radio-item">
-                        <input type="checkbox" name="setuju" style="width: 20px; height: 20px;"> Ya, saya setuju
+                        <input type="checkbox" name="setuju" class="checkbox"> Ya, saya setuju
                     </label>
                 </div>
 
@@ -634,18 +892,20 @@
 @push('scripts')
     <script>
         function nextStep(step) {
-            // Hide all sections
-            document.querySelectorAll('.form-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            // Show target section
+            document.querySelectorAll('.form-section').forEach(s => s.classList.remove('active'));
             document.getElementById('step' + step).classList.add('active');
-            // Scroll to top of form
+
+            // Update step indicator
+            document.querySelectorAll('.step-item').forEach((el, i) => {
+                el.classList.toggle('active', i + 1 <= step);
+                el.classList.toggle('done', i + 1 < step);
+            });
+
             window.scrollTo({ top: document.querySelector('.title-section').offsetTop - 50, behavior: 'smooth' });
         }
 
         function updateFileName(input) {
-            const fileName = input.files[0] ? input.files[0].name : "No file chosen";
+            const fileName = input.files[0] ? input.files[0].name : 'No file chosen';
             input.parentElement.querySelector('.file-name').textContent = fileName;
         }
     </script>

@@ -1319,3 +1319,1028 @@ body {
 .page-number i {
     font-size: 12px;
 }
+
+/* ==============================================
+   RESPONSIVE CSS
+   Breakpoints:
+   - Tablet  : max-width 1024px
+   - Mobile  : max-width 768px
+   - Small   : max-width 480px
+   ============================================== */
+
+/* ── Scroll Top ── */
+@media (max-width: 768px) {
+    #scrollTop {
+        right: 16px;
+        bottom: 16px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #scrollTop i {
+        font-size: 14px;
+    }
+}
+
+/* ── Buttons ── */
+@media (max-width: 480px) {
+
+    .btn-white,
+    .btn-yellow,
+    .btn-yellow-border-black,
+    .btn-transparent-border-black,
+    .btn-yellow-text-black {
+        padding: 10px 14px;
+        font-size: 13px;
+    }
+}
+
+/* ==============================================
+   HEADER
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .header-inner {
+        gap: 20px;
+    }
+
+    .header-inner .nav-link {
+        gap: 16px;
+    }
+
+    .header-inner .buttons {
+        gap: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header-inner {
+        flex-wrap: wrap;
+        gap: 12px;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header-inner .logo img {
+        width: 56px;
+        height: 56px;
+    }
+
+    /* Nav links jadi horizontal scrollable di bawah logo */
+    .header-inner .nav-link {
+        position: static;
+        transform: none;
+        order: 3;
+        width: 100%;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .header-inner .nav-link a {
+        font-size: 13px;
+    }
+
+    .header-inner .buttons {
+        margin-left: 0;
+        gap: 8px;
+    }
+
+    .header-sticky {
+        padding: 12px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header-inner .buttons {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-inner .buttons a,
+    .header-inner .buttons button {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
+
+/* ==============================================
+   WRAPPER / HERO
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .wrapper-page {
+        padding: 40px 20px 120px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper-page {
+        padding: 30px 16px 80px 16px;
+    }
+
+    .page-title {
+        margin-top: 80px;
+    }
+
+    .page-title h1 {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .page-title h2 {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .page-title p {
+        text-align: center;
+    }
+
+    .page-title .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+        margin-top: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title h1 {
+        font-size: 26px;
+    }
+
+    .page-title h2 {
+        font-size: 15px;
+    }
+}
+
+/* ==============================================
+   ABOUT SECTION
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .about-section {
+        gap: 30px;
+    }
+
+    .about-section .right {
+        padding: 30px 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .wrapper-white-1 {
+        padding: 60px 16px;
+    }
+
+    .about-section {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .about-section .left img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .about-section .right {
+        padding: 0;
+    }
+
+    .about-section .right h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==============================================
+   PILAR SECTION (HOME)
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .wrapper-blue-1 {
+        padding: 60px 20px;
+    }
+
+    .pilar-section .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pilar-section .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .pilar-section .cards .card-blue,
+    .pilar-section .cards .card-white {
+        padding: 36px 24px;
+    }
+
+    .pilar-section h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==============================================
+   PILAR SECTION (ABOUT)
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .pilar-section-about .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .pilar-section-about .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .pilar-section-about .cards .card-blue,
+    .pilar-section-about .cards .card-white {
+        padding: 36px 24px;
+    }
+
+    .pilar-section-about h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==============================================
+   PROGRAM SECTION
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .program-section .item-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .program-section h2 {
+        font-size: 20px;
+    }
+
+    .program-section .item-grid .item {
+        flex-direction: column;
+        gap: 20px;
+        padding: 24px;
+        text-align: center;
+    }
+
+    .program-section .item-grid h3 {
+        text-align: center;
+        font-size: 17px;
+    }
+
+    .program-section .item-grid p {
+        text-align: center;
+    }
+}
+
+/* ==============================================
+   ANGGOTA SECTION
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .wrapper-gold-1 {
+        padding: 60px 20px;
+    }
+
+    .anggota-section .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .anggota-section h2 {
+        font-size: 20px;
+    }
+
+    .anggota-section .item h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .anggota-section .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==============================================
+   KEGIATAN CAROUSEL
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .kegiatan-section .card {
+        flex: 0 0 calc(33.333% - 17px);
+    }
+}
+
+@media (max-width: 768px) {
+    .kegiatan-section h2 {
+        font-size: 20px;
+    }
+
+    .kegiatan-section .card {
+        flex: 0 0 calc(50% - 13px);
+    }
+
+    .kegiatan-carousel-outer .carousel-arrow-left {
+        left: -12px;
+    }
+
+    .kegiatan-carousel-outer .carousel-arrow-right {
+        right: -12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .kegiatan-section .card {
+        flex: 0 0 100%;
+    }
+
+    .kegiatan-section .card .card-image-wrap {
+        height: 280px;
+    }
+
+    .kegiatan-carousel-outer .carousel-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 12px;
+    }
+}
+
+/* ==============================================
+   KATALOG SECTION
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .katalog-section .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .katalog-section h2 {
+        font-size: 20px;
+    }
+
+    .katalog-section .item h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .katalog-section .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==============================================
+   BERGABUNG SECTION
+   ============================================== */
+
+@media (max-width: 768px) {
+
+    .wrapper-image-2,
+    .wrapper-image-3 {
+        padding: 60px 16px;
+    }
+
+    .bergabung-section h1 {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bergabung-section h1 {
+        font-size: 22px;
+    }
+}
+
+/* ==============================================
+   VISI SECTION
+   ============================================== */
+
+@media (max-width: 768px) {
+    .visi-section {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .visi-section .left img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+    }
+
+    .visi-section .right {
+        padding: 40px 16px;
+    }
+
+    .visi-section .right h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==============================================
+   NILAI SECTION
+   ============================================== */
+
+@media (max-width: 768px) {
+    .nilai-section {
+        flex-direction: column;
+    }
+
+    .nilai-section .left,
+    .nilai-section .right {
+        padding: 60px 24px;
+        align-items: center;
+    }
+
+    .nilai-section .left p {
+        text-align: center;
+    }
+
+    .nilai-section .right p {
+        text-align: center;
+    }
+
+    .nilai-section .left h2,
+    .nilai-section .right h2 {
+        font-size: 20px;
+        text-align: center;
+    }
+}
+
+/* ==============================================
+   ORGANISASI SECTION
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .organisasi-section .grid-section .grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .organisasi-section h2 {
+        font-size: 20px;
+    }
+
+    .organisasi-section .grid-section .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .organisasi-section .grid-section .grid-4 {
+        grid-template-columns: 1fr;
+    }
+
+    .organisasi-section .grid-section .card img {
+        width: 110px;
+        height: 110px;
+    }
+}
+
+/* ==============================================
+   BERITA PAGE SECTION
+   ============================================== */
+
+@media (max-width: 1024px) {
+    .berita-page-section {
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .berita-page-section .right {
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .berita-page-section .item {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .berita-page-section .item .image img {
+        height: 200px;
+    }
+
+    .berita-page-section .item .content h2 {
+        font-size: 17px;
+    }
+
+    .berita-page-section .right h2 {
+        font-size: 20px;
+    }
+}
+
+/* ==============================================
+   PAGINATION
+   ============================================== */
+
+@media (max-width: 480px) {
+    .pagination-section {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 6px;
+        padding: 0 16px;
+    }
+
+    .page-number {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+/* ==============================================
+   GLOBAL WRAPPER PADDING
+   ============================================== */
+
+@media (max-width: 768px) {
+
+    .wrapper-white-1,
+    .wrapper-blue-1,
+    .wrapper-gold-1 {
+        padding: 60px 16px;
+    }
+
+    .wrapper-pagination-white {
+        padding-bottom: 60px;
+    }
+}
+
+/* ==============================================
+   HAMBURGER MENU
+   ============================================== */
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
+    gap: 6px;
+    z-index: 1001;
+    flex-shrink: 0;
+}
+
+.hamburger span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    border-radius: 2px;
+    transition: transform 0.35s cubic-bezier(.4, 0, .2, 1),
+        opacity 0.25s ease,
+        width 0.3s ease;
+    transform-origin: center;
+}
+
+/* Warna untuk sticky header (bg putih) */
+.header-sticky .hamburger span {
+    background-color: #000;
+}
+
+/* Warna untuk page header (bg gelap) */
+.page-header .hamburger span {
+    background-color: #fff;
+}
+
+/* State: open */
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+    width: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/* ==============================================
+   MOBILE NAV DRAWER
+   ============================================== */
+
+.mobile-nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.mobile-nav-overlay.open {
+    opacity: 1;
+}
+
+.mobile-nav-drawer {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 280px;
+    max-width: 85vw;
+    height: 100dvh;
+    background-color: #090B62;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    transition: right 0.35s cubic-bezier(.4, 0, .2, 1);
+    box-shadow: -5px 0 30px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+}
+
+.mobile-nav-drawer.open {
+    right: 0;
+}
+
+/* Header drawer */
+.mobile-nav-drawer .drawer-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-drawer .drawer-header img {
+    width: 48px;
+    height: 48px;
+}
+
+.mobile-nav-drawer .drawer-close {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Nav links di drawer */
+.mobile-nav-drawer .drawer-links {
+    display: flex;
+    flex-direction: column;
+    padding: 16px 0;
+    flex: 1;
+}
+
+.mobile-nav-drawer .drawer-links a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 15px;
+    padding: 14px 24px;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+    font-family: 'Google Sans', sans-serif;
+}
+
+.mobile-nav-drawer .drawer-links a:hover {
+    color: #FFE701;
+    background-color: rgba(255, 255, 255, 0.05);
+    border-left-color: #FFE701;
+}
+
+.mobile-nav-drawer .drawer-links a.active {
+    color: #FFE701;
+    font-weight: 700;
+    border-left-color: #FFE701;
+    background-color: rgba(255, 231, 1, 0.08);
+}
+
+/* Divider */
+.mobile-nav-drawer .drawer-divider {
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    margin: 8px 24px;
+}
+
+/* Tombol CTA di drawer */
+.mobile-nav-drawer .drawer-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 24px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.mobile-nav-drawer .drawer-buttons a {
+    text-decoration: none;
+    text-align: center;
+    padding: 12px;
+    border-radius: 7px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.mobile-nav-drawer .drawer-buttons .btn-drawer-white {
+    color: #090B62;
+    background-color: #fff;
+    border: 1px solid #fff;
+}
+
+.mobile-nav-drawer .drawer-buttons .btn-drawer-white:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+.mobile-nav-drawer .drawer-buttons .btn-drawer-yellow {
+    color: #000;
+    background-color: #FFE701;
+    border: 1px solid #FFE701;
+}
+
+.mobile-nav-drawer .drawer-buttons .btn-drawer-yellow:hover {
+    background-color: transparent;
+    color: #fff;
+}
+
+/* ==============================================
+   RESPONSIVE: KAPAN HAMBURGER MUNCUL
+   ============================================== */
+
+@media (max-width: 900px) {
+
+    /* Sembunyikan nav & buttons asli */
+    .header-inner .nav-link {
+        display: none !important;
+    }
+
+    .header-inner .buttons {
+        display: none !important;
+    }
+
+    /* Tampilkan hamburger */
+    .hamburger {
+        display: flex;
+        margin-left: auto;
+    }
+
+    /* Tampilkan overlay */
+    .mobile-nav-overlay {
+        display: block;
+        pointer-events: none;
+    }
+
+    .mobile-nav-overlay.open {
+        pointer-events: all;
+    }
+
+    /* Pastikan header-inner tidak wrap aneh */
+    .header-inner {
+        flex-wrap: nowrap;
+        gap: 16px;
+    }
+}
+
+/* ==============================================
+   FOOTER
+   ============================================== */
+
+.site-footer {
+    background-color: #090B62;
+    color: #fff;
+    padding: 80px 20px 40px;
+    font-family: 'Google Sans', sans-serif;
+}
+
+.footer-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+}
+
+/* ── Brand / Logo ── */
+.footer-logo {
+    width: 100px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.footer-desc {
+    font-size: 14px;
+    line-height: 1.8;
+    color: rgba(255, 255, 255, 0.8);
+    max-width: 300px;
+    margin: 0;
+}
+
+/* ── Column headings ── */
+.footer-heading {
+    font-size: 18px;
+    font-weight: 700;
+    margin: 0 0 25px;
+    color: #fff;
+}
+
+/* ── Nav links ── */
+.footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footer-links a:hover {
+    color: #FFE701;
+}
+
+/* ── Contact column ── */
+.footer-contact-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-contact-label {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0 0 5px;
+    color: #fff;
+}
+
+.footer-contact-text {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.7);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Social icons ── */
+.footer-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+}
+
+.footer-socials a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.footer-socials a:hover {
+    color: #FFE701;
+    transform: translateY(-3px);
+}
+
+/* ==============================================
+   BOTTOM BAR
+   ============================================== */
+
+.footer-bottom {
+    background-color: #BB8D14;
+    padding: 20px 0;
+    color: rgba(255, 255, 255, 0.9);
+    font-family: 'Google Sans', sans-serif;
+}
+
+.footer-bottom-inner {
+    max-width: 1300px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    gap: 16px;
+}
+
+.footer-copyright {
+    font-size: 13px;
+    margin: 0;
+}
+
+.footer-copyright a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: opacity 0.2s;
+}
+
+.footer-copyright a:hover {
+    opacity: 0.8;
+}
+
+.footer-bottom-links {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-bottom-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 13px;
+    transition: opacity 0.2s;
+}
+
+.footer-bottom-links a:hover {
+    opacity: 0.8;
+}
+
+/* ==============================================
+   RESPONSIVE
+   ============================================== */
+
+/* Tablet: 1024px */
+@media (max-width: 1024px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 40px 30px;
+    }
+
+    .footer-brand {
+        grid-column: 1 / -1;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .footer-logo {
+        width: 72px;
+        margin-bottom: 0;
+        flex-shrink: 0;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+}
+
+/* Mobile: 768px */
+@media (max-width: 768px) {
+    .site-footer {
+        padding: 60px 16px 32px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        gap: 16px;
+        grid-column: auto;
+    }
+
+    .footer-logo {
+        width: 64px;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+
+    .footer-heading {
+        font-size: 16px;
+        margin-bottom: 16px;
+    }
+}
+
+/* Mobile: 480px - Bottom Bar */
+@media (max-width: 600px) {
+    .footer-bottom-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 12px;
+    }
+
+    .footer-bottom-links {
+        gap: 20px;
+    }
+}

@@ -379,23 +379,51 @@
             const btnPrev = document.getElementById('kegiatanPrev');
             const btnNext = document.getElementById('kegiatanNext');
 
-            const VISIBLE = 4;   // berapa card yang tampil sekaligus
-            const GAP = 25;  // harus sama dengan gap di CSS
+            const GAP = 25; // harus sama dengan gap di CSS
 
             const cards = track.querySelectorAll('.card');
             const total = cards.length;
-            const maxStep = Math.max(0, total - VISIBLE); // maksimum offset index
 
             let current = 0;
 
+            /* ── Berapa card yang tampil sesuai lebar layar ── */
+            function getVisible() {
+                const w = window.innerWidth;
+                if (w <= 480) return 1;
+                if (w <= 768) return 2;
+                if (w <= 1024) return 3;
+                return 4;
+            }
+
             /* ── Hitung lebar 1 step ── */
             function stepWidth() {
+                const VISIBLE = getVisible();
                 const trackW = track.parentElement.offsetWidth;
                 return (trackW + GAP) / VISIBLE;
             }
 
+            /* ── Maksimum index yang bisa dicapai ── */
+            function getMaxStep() {
+                return Math.max(0, total - getVisible());
+            }
+
+            /* ── Rebuild dots sesuai maxStep ── */
+            function buildDots() {
+                dotsEl.innerHTML = '';
+                const maxStep = getMaxStep();
+                for (var i = 0; i <= maxStep; i++) {
+                    var dot = document.createElement('button');
+                    dot.className = 'dot' + (i === current ? ' active' : '');
+                    dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+                    dot.dataset.idx = i;
+                    dot.addEventListener('click', function () { goTo(+this.dataset.idx); });
+                    dotsEl.appendChild(dot);
+                }
+            }
+
             /* ── Geser track ── */
             function goTo(idx) {
+                const maxStep = getMaxStep();
                 current = ((idx % (maxStep + 1)) + (maxStep + 1)) % (maxStep + 1); // loop
                 track.style.transform = 'translateX(-' + (current * stepWidth()) + 'px)';
                 dotsEl.querySelectorAll('.dot').forEach(function (d, i) {
@@ -403,22 +431,17 @@
                 });
             }
 
-            /* ── Buat dots ── */
-            for (var i = 0; i <= maxStep; i++) {
-                var dot = document.createElement('button');
-                dot.className = 'dot' + (i === 0 ? ' active' : '');
-                dot.setAttribute('aria-label', 'Slide ' + (i + 1));
-                dot.dataset.idx = i;
-                dot.addEventListener('click', function () { goTo(+this.dataset.idx); });
-                dotsEl.appendChild(dot);
-            }
+            /* ── Recalculate on resize ── */
+            window.addEventListener('resize', function () {
+                buildDots();
+                // Clamp current agar tidak melebihi maxStep baru
+                if (current > getMaxStep()) current = getMaxStep();
+                goTo(current);
+            });
 
             /* ── Arrow buttons ── */
             btnPrev.addEventListener('click', function () { goTo(current - 1); });
             btnNext.addEventListener('click', function () { goTo(current + 1); });
-
-            /* ── Recalculate on resize ── */
-            window.addEventListener('resize', function () { goTo(current); });
 
             /* ── Swipe support (mobile) ── */
             var touchStartX = 0;
@@ -429,6 +452,10 @@
                 var dx = e.changedTouches[0].clientX - touchStartX;
                 if (Math.abs(dx) > 40) goTo(dx < 0 ? current + 1 : current - 1);
             });
+
+            /* ── Init ── */
+            buildDots();
+            goTo(0);
         })();
     </script>
 @endpush
